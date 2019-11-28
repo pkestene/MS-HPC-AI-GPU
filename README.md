@@ -58,6 +58,9 @@ Resources pour le cours d'introduction à la programmation des GPUs du [mastère
 
 ### CUDA / python
 
+- [Numba](http://numba.pydata.org/) // [recommended numba tutorial for GPU programming](https://github.com/ContinuumIO/gtc2019-numba)
+- [CuPy](https://cupy.chainer.org/)
+- [pycuda](https://documen.tician.de/pycuda/)
 - [python / C++ CUDA interface (SWIG and Cython)](https://github.com/pkestene/npcuda-example)
 - [python / C++ CUDA interface with pybind11](https://github.com/pkestene/pybind11-cuda)
 - [legate](https://legion.stanford.edu/pdfs/legate-preprint.pdf)
@@ -87,13 +90,15 @@ Resources pour le cours d'introduction à la programmation des GPUs du [mastère
 ### OpenAcc
 
 - https://www.fz-juelich.de/SharedDocs/Downloads/IAS/JSC/EN/slides/openacc/2-openacc-introduction.pdf?__blob=publicationFile
+- https://github.com/eth-cscs/SummerSchool2019/tree/master/topics/openacc
 - https://developer.nvidia.com/openacc-overview-course
 - https://perso.centrale-marseille.fr/~gchiavassa/visible/HPC/01%20-%20GR%20%20Intro%20to%20GPU%20programming%20V2%20OpenACC%20.pdf
 
-### Books on GPU programming
+### Books on GPU programming / recommended reading
 
-- The CUDA Handbook: A Comprehensive Guide to GPU Programming, by Nicholas Wilt, http://www.cudahandbook.com/
+- [The CUDA Handbook: A Comprehensive Guide to GPU Programming](http://www.cudahandbook.com/), by Nicholas Wilt, Pearson Education.
 - [CUDA by example](https://www.amazon.com/CUDA-Example-Introduction-General-Purpose-Programming/dp/0131387685/ref=pd_bbs_sr_1/103-9839083-1501412?ie=UTF8&s=books&qid=1186428068&sr=1-1), by Sanders and Kandrot, Addison-Wesley, 2010. Also available in [pdf](http://www.mat.unimi.it/users/sansotte/cuda/CUDA_by_Example.pdf)
+- [Learn CUDA programming](https://www.packtpub.com/eu/application-development/cuda-cookbook) by B. Sharma and J. Han, Packt Publishing, 2019
 - Python + CUDA : https://github.com/PacktPublishing/Hands-On-GPU-Programming-with-Python-and-CUDA 
 - https://www.oreilly.com/library/view/hands-on-gpu-programming/9781788993913/ by Brian Tuomanen
 
@@ -117,7 +122,9 @@ Resources pour le cours d'introduction à la programmation des GPUs du [mastère
 - [CSCS computing center training on C++ videos](https://www.cscs.ch/publications/tutorials/2019/videos-of-workshop-advanced-c/)
 
 
-### high-level libraries for programming GPUs
+### high-level C++ libraries for programming GPUs
+
+Alternate programming models for programming modern computing architectures in a performance portable way:
 
 - introduction to [performance portability](https://performanceportability.org/perfport/overview/)
 - https://github.com/arrayfire/arrayfire
