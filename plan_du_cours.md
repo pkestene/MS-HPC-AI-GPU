@@ -26,6 +26,9 @@
 # Le modèle de programmation CUDA
 
 Que signifie l'acronyme CUDA ? Que désigne-t'il ?
+- un language de programmation ?
+- un compilateur ?
+- une architecture matérielle ?
 
 ## Architecture matérielle des GPU
 
