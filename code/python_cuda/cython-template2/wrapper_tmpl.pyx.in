@@ -1,0 +1,69 @@
+<?py
+import datetime
+now = datetime.datetime.now()
+template_strs = ['CLASSNAME','C_TYPE','NUMPY_TYPENAME_T','NUMPY_TYPENAME']
+template_type_str = 'ARRAY_TYPE'
+c_types_info = {'int':['Int', "int", "np.int32_t", "np.int32",[]],
+                'unsigned int':['UInt',"uint", "np.uint32_t", "np.uint32", []],
+                'double':['Double', "double", "np.float64_t", "np.float64",[]],
+                'long':['Long', "long", "np.int64_t", "np.int64",[]],
+                'float':['Float', "float", "np.float32_t", "np.float32",[]]#
+                }
+?># This file (wrapper_tmpl.pyx) has been generated automatically on
+# <?py= now.strftime('%c') ?>
+# DO NOT modify this file
+# To make changes modify the source templates (wrapper_tmpl.pyx.in) and regenerate
+"""
+Define wrapper class GPUAdder for different types.
+"""
+import numpy as np
+cimport numpy as np
+
+assert sizeof(int)    == sizeof(np.int32_t)
+assert sizeof(float)  == sizeof(np.float32_t)
+assert sizeof(double) == sizeof(np.float64_t)
+
+cdef extern from "src/manager.hh":
+    cdef cppclass GPUAdder[T]:
+        GPUAdder(T*, int)
+        void increment()
+        void retreive()
+        void retreive_to(T*, int)
+
+<?py
+pxd_code_str = '''
+#########################################################
+#  `CLASSNAME`
+#########################################################
+cdef class GPUAdder_CLASSNAME:
+    cdef GPUAdder[NUMPY_TYPENAME_T]* g
+    cdef int dim1
+
+    def __cinit__(self, np.ndarray[ndim=1, dtype=NUMPY_TYPENAME_T] arr):
+        self.dim1 = len(arr)
+        self.g = new GPUAdder[NUMPY_TYPENAME_T](&arr[0], self.dim1)
+
+    def increment(self):
+        self.g.increment()
+
+    def retreive_inplace(self):
+        self.g.retreive()
+
+    def retreive(self):
+        cdef np.ndarray[ndim=1, dtype=NUMPY_TYPENAME_T] a = np.zeros(self.dim1, dtype=NUMPY_TYPENAME)
+
+        self.g.retreive_to(&a[0], self.dim1)
+
+        return a
+
+'''
+for ctype,info in c_types_info.items():
+    code = pxd_code_str
+    code = code.replace(template_strs[0], info[0])
+    code = code.replace(template_type_str, ctype)
+    code = code.replace(template_strs[2], info[2])
+    code = code.replace(template_strs[3], info[3])
+    out.write(code)
+    
+?>
+                        
