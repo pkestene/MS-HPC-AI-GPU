@@ -87,6 +87,10 @@ Resources pour le cours d'introduction à la programmation des GPUs du [mastère
 - https://www.nas.nasa.gov/hecc/assets/pdf/training/OpenMP4.5_3-20-19.pdf
 - http://www.admin-magazine.com/HPC/Articles/OpenMP-Coding-Habits-and-GPUs?utm_source=AMEP
 
+### OpenMP target
+
+- https://www.openmp.org/wp-content/uploads/SC17-OpenMPBooth_jlarkin.pdf
+
 ### OpenAcc
 
 - https://www.fz-juelich.de/SharedDocs/Downloads/IAS/JSC/EN/slides/openacc/2-openacc-introduction.pdf?__blob=publicationFile
