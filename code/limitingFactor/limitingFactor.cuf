@@ -1,0 +1,65 @@
+!
+! config #1
+! pgfortran -Mcuda=cc20 -Mcuda=ptxinfo limitingFactor.cuf -o limitingFactor
+!
+! config #2
+! pgfortran -Mcuda=cc20 -Mcuda=ptxinfo -Mcuda=fastmath limitingFactor.cuf -o limitingFactor
+!
+! Note that fastmath option triggers the use of the special unit hardware; less IEEE754 compliant;
+! denormal numbers are flushed to zero; division is approximated; square root is approximated
+!
+
+module kernel_m
+
+contains
+  attributes ( global ) subroutine memory_and_math (a , b )
+    real :: a (*) , b (*)
+    integer :: i
+    i = ( blockIdx %x -1)* blockDim % x + threadIdx % x
+    a ( i ) = sin ( b ( i ))
+  end subroutine memory_and_math
+
+  attributes ( global ) subroutine memory (a , b )
+    real :: a (*) , b (*)
+    integer :: i
+    i = ( blockIdx %x -1)* blockDim % x + threadIdx % x
+    a(i) = b(i)
+  end subroutine memory
+
+  attributes ( global ) subroutine math (a , b , flag )
+    real :: a (*)
+    real , value :: b
+    integer , value :: flag
+    real :: v
+    integer :: i
+    i = ( blockIdx %x -1)* blockDim % x + threadIdx % x
+    v = sin ( b )
+    if ( v * flag == 1) a ( i ) = v
+  end subroutine math
+
+end module kernel_m
+
+
+program limitingFactor
+
+  use cudafor
+  use kernel_m
+
+  implicit none
+
+  integer , parameter :: n =8*1024*1024 , blockSize = 256
+  real :: a ( n )
+  real , device :: a_d ( n ) , b_d ( n )
+
+  ! initialize device array
+  b_d = 1.0
+
+  ! computation
+  call memory_and_math<<< n / blockSize , blockSize >>>  ( a_d , b_d )
+  call memory         <<< n / blockSize , blockSize >>>( a_d , b_d )
+  call math           <<< n / blockSize , blockSize >>>  ( a_d , 1.0 , 0)
+  a = a_d
+
+  write (*,*) a(1)
+
+end program limitingFactor
