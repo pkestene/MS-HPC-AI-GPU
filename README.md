@@ -90,6 +90,7 @@ Resources pour le cours d'introduction à la programmation des GPUs du [mastère
 ### OpenAcc
 
 - https://www.fz-juelich.de/SharedDocs/Downloads/IAS/JSC/EN/slides/openacc/2-openacc-introduction.pdf?__blob=publicationFile
+- [Introduction to GPU programming using OpenACC](https://www.fzj.de/ias/jsc/EN/Expertise/Services/Documentation/presentations/presentation-openacc_table.html)
 - https://github.com/eth-cscs/SummerSchool2019/tree/master/topics/openacc
 - https://developer.nvidia.com/openacc-overview-course
 - https://perso.centrale-marseille.fr/~gchiavassa/visible/HPC/01%20-%20GR%20%20Intro%20to%20GPU%20programming%20V2%20OpenACC%20.pdf
