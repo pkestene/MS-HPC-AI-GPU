@@ -13,7 +13,7 @@ Resources pour le cours d'introduction à la programmation des GPUs du [mastère
 - [CSCI-5576/4576: High Performance Scientific Computing](https://github.com/cucs-hpsc/hpsc-class)
 - Mark Horowitz talk at ISSCC_2014: [Computing's energy problem](http://eecs.oregonstate.edu/research/vlsi/teaching/ECE471_WIN15/mark_horowitz_ISSCC_2014.pdf)
 - [Introduction to High-Performance Scientific Computing, book and slides by Victor Eijkhout](https://bitbucket.org/VictorEijkhout/hpc-book-and-course/src/default/)
-- [Sand Diego Summer institute](https://github.com/sdsc/sdsc-summer-institute-2019)
+- [San Diego Summer institute](https://github.com/sdsc/sdsc-summer-institute-2019)
 - [Finninsh CSC summer school](https://github.com/csc-training/summerschool)
 - [Computational Physics book by K. N. Anagnostopoulos](http://www.physics.ntua.gr/~konstant/ComputationalPhysics/C++/Book/ComputationalPhysicsKNA2ndEd_nocover.pdf)
 - [Modern computer architecture slides](https://moodle.rrze.uni-erlangen.de/pluginfile.php/12916/mod_resource/content/6/01_IntroArchitecture.pdf)
