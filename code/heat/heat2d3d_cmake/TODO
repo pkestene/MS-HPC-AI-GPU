@@ -1,0 +1,8 @@
+- [DONE] implement the 3D 4th order scheme in the GPU shared memory version
+- investigate if data pre-fetching can be implement to illustrate its
+   usefullness
+- implement a Fortran version (at least the GPU / naive version),
+   using the PGI CUDA/fortran compiler
+- implement Crank-Nicholson at least in the 2D case
+- [DONE] modify GLUT GUI: implement a mouse routine, to catch mouse click,
+   and fix data at that location.

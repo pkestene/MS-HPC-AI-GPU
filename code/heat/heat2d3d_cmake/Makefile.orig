@@ -1,0 +1,219 @@
+#
+# TP CUDA
+# GPU school, Maison de la Simulation
+# Saclay, December 2011
+#
+include system.mk
+
+# Do we want to use double precision ? (just uncomment the following 3 lines)
+#CFLAGS   += -DUSE_DOUBLE
+#CXXFLAGS += -DUSE_DOUBLE
+#NVCFLAGS += --compiler-options -DUSE_DOUBLE
+
+
+# list of executables
+EXEC2D = \
+	heat_solver_cpu \
+	heat2d_solver_gpu_naive \
+	heat2d_solver_gpu_naive2 \
+	heat2d_solver_gpu_shmem1 \
+	heat2d_solver_gpu_shmem2 \
+	heat2d_glut_cpu \
+	heat2d_glut_gpu
+
+EXEC3D = \
+	heat3d_solver_gpu_naive  \
+	heat3d_solver_gpu_shmem1 \
+	heat3d_solver_gpu_shmem2 \
+	heat3d_solver_gpu_shmem3 \
+	heat3d_solver_gpu_shmem4
+
+EXEC= $(EXEC2D) $(EXEC3D)
+
+all: $(EXEC)
+ifeq ($(DEBUG),yes)
+	@echo "##### mode debug #####"
+else
+	@echo "##### mode release #####"
+endif
+
+#
+# libHeatCommon : library with routines used by all applications CPU / GPU
+#
+libHeatCommon_SOURCES = \
+	param.cpp \
+	output.cpp \
+	misc.cpp \
+	Timer.cpp \
+	heat_kernel_cpu.cpp
+libHeatCommon_OBJECTS = $(libHeatCommon_SOURCES:.cpp=.o)
+libHeatCommon.so: $(libHeatCommon_OBJECTS)
+	@echo "#####################################################"
+	@echo "BUILD : $@"
+	@echo "#####################################################"
+	$(CXX) $(CXXFLAGS) -fPIC -shared -o $@ $^
+HEAT_LDFLAGS = -Wl,-rpath,. -L. -lHeatCommon
+
+
+#
+# heat_solver_cpu : solve heat equation on CPU
+#
+heat_solver_cpu_SOURCES = heat_solver_cpu.cpp
+heat_solver_cpu_OBJECTS = $(heat_solver_cpu_SOURCES:.cpp=.o)
+heat_solver_cpu: $(heat_solver_cpu_OBJECTS) libHeatCommon.so
+	@echo "#####################################################"
+	@echo "BUILD : $@"
+	@echo "#####################################################"
+	$(CXX) $(CXXFLAGS) -o $@ $(heat_solver_cpu_OBJECTS) $(HEAT_LDFLAGS) $(EXTRA_LDFLAGS)
+
+#
+# heat2d_solver_gpu_naive
+#
+heat2d_solver_gpu_naive_SOURCES_CU  = heat2d_solver_gpu_naive.cu
+heat2d_solver_gpu_naive_OBJECTS = $(heat2d_solver_gpu_naive_SOURCES_CU:.cu=.o)
+heat2d_solver_gpu_naive: $(heat2d_solver_gpu_naive_OBJECTS) libHeatCommon.so
+	@echo "#####################################################"
+	@echo "BUILD : $@"
+	@echo "#####################################################"
+	$(CXX) $(CXXFLAGS) -o $@ $(heat2d_solver_gpu_naive_OBJECTS) -lcudart $(HEAT_LDFLAGS) $(EXTRA_LDFLAGS)
+
+
+#
+# heat2d_solver_gpu_naive2
+#
+heat2d_solver_gpu_naive2_SOURCES_CU  = heat2d_solver_gpu_naive2.cu
+heat2d_solver_gpu_naive2_OBJECTS = $(heat2d_solver_gpu_naive2_SOURCES_CU:.cu=.o)
+heat2d_solver_gpu_naive2: $(heat2d_solver_gpu_naive2_OBJECTS) libHeatCommon.so
+	@echo "#####################################################"
+	@echo "BUILD : $@"
+	@echo "#####################################################"
+	$(CXX) $(CXXFLAGS) -o $@ $(heat2d_solver_gpu_naive2_OBJECTS) -lcudart $(CUTIL_LDFLAGS) $(HEAT_LDFLAGS) $(EXTRA_LDFLAGS)
+
+
+#
+# heat2d_solver_gpu_shmem1
+#
+heat2d_solver_gpu_shmem1_SOURCES_CU  = heat2d_solver_gpu_shmem1.cu
+heat2d_solver_gpu_shmem1_OBJECTS = $(heat2d_solver_gpu_shmem1_SOURCES_CU:.cu=.o)
+heat2d_solver_gpu_shmem1: $(heat2d_solver_gpu_shmem1_OBJECTS) libHeatCommon.so
+	@echo "#####################################################"
+	@echo "BUILD : $@"
+	@echo "#####################################################"
+	$(CXX) $(CXXFLAGS)  -o $@ $(heat2d_solver_gpu_shmem1_OBJECTS) -lcudart $(CUTIL_LDFLAGS) $(HEAT_LDFLAGS) $(EXTRA_LDFLAGS)
+
+
+#
+# heat2d_solver_gpu_shmem2
+#
+heat2d_solver_gpu_shmem2_SOURCES_CU  = heat2d_solver_gpu_shmem2.cu
+heat2d_solver_gpu_shmem2_OBJECTS = $(heat2d_solver_gpu_shmem2_SOURCES_CU:.cu=.o)
+heat2d_solver_gpu_shmem2: $(heat2d_solver_gpu_shmem2_OBJECTS) libHeatCommon.so
+	@echo "#####################################################"
+	@echo "BUILD : $@"
+	@echo "#####################################################"
+	$(CXX) $(CXXFLAGS)  -o $@ $(heat2d_solver_gpu_shmem2_OBJECTS) -lcudart $(CUTIL_LDFLAGS) $(HEAT_LDFLAGS) $(EXTRA_LDFLAGS)
+
+
+#
+# heat2d_solver_gpu_shmem3
+#
+heat2d_solver_gpu_shmem3_SOURCES_CU  = heat2d_solver_gpu_shmem3.cu
+heat2d_solver_gpu_shmem3_OBJECTS = $(heat2d_solver_gpu_shmem3_SOURCES_CU:.cu=.o)
+heat2d_solver_gpu_shmem3: $(heat2d_solver_gpu_shmem3_OBJECTS) libHeatCommon.so
+	@echo "#####################################################"
+	@echo "BUILD : $@"
+	@echo "#####################################################"
+	$(CXX) $(CXXFLAGS)  -o $@ $(heat2d_solver_gpu_shmem3_OBJECTS) -lcudart $(CUTIL_LDFLAGS) $(HEAT_LDFLAGS) $(EXTRA_LDFLAGS)
+
+
+#
+# heat3d_solver_gpu_naive
+#
+heat3d_solver_gpu_naive_SOURCES_CU  = heat3d_solver_gpu_naive.cu
+heat3d_solver_gpu_naive_OBJECTS = $(heat3d_solver_gpu_naive_SOURCES_CU:.cu=.o)
+heat3d_solver_gpu_naive: $(heat3d_solver_gpu_naive_OBJECTS) libHeatCommon.so
+	@echo "#####################################################"
+	@echo "BUILD : $@"
+	@echo "#####################################################"
+	$(CXX) $(CXXFLAGS)  -o $@ $(heat3d_solver_gpu_naive_OBJECTS) -lcudart $(CUTIL_LDFLAGS) $(HEAT_LDFLAGS) $(EXTRA_LDFLAGS)
+
+#
+# heat3d_solver_gpu_shmem1
+#
+heat3d_solver_gpu_shmem1_SOURCES_CU  = heat3d_solver_gpu_shmem1.cu
+heat3d_solver_gpu_shmem1_OBJECTS = $(heat3d_solver_gpu_shmem1_SOURCES_CU:.cu=.o)
+heat3d_solver_gpu_shmem1: $(heat3d_solver_gpu_shmem1_OBJECTS) libHeatCommon.so
+	@echo "#####################################################"
+	@echo "BUILD : $@"
+	@echo "#####################################################"
+	$(CXX) $(CXXFLAGS)  -o $@ $(heat3d_solver_gpu_shmem1_OBJECTS) -lcudart $(CUTIL_LDFLAGS) $(HEAT_LDFLAGS) $(EXTRA_LDFLAGS)
+
+#
+# heat3d_solver_gpu_shmem2
+#
+heat3d_solver_gpu_shmem2_SOURCES_CU  = heat3d_solver_gpu_shmem2.cu
+heat3d_solver_gpu_shmem2_OBJECTS = $(heat3d_solver_gpu_shmem2_SOURCES_CU:.cu=.o)
+heat3d_solver_gpu_shmem2: $(heat3d_solver_gpu_shmem2_OBJECTS) libHeatCommon.so
+	@echo "#####################################################"
+	@echo "BUILD : $@"
+	@echo "#####################################################"
+	$(CXX) $(CXXFLAGS)  -o $@ $(heat3d_solver_gpu_shmem2_OBJECTS) -lcudart $(CUTIL_LDFLAGS) $(HEAT_LDFLAGS) $(EXTRA_LDFLAGS)
+
+#
+# heat3d_solver_gpu_shmem3
+#
+heat3d_solver_gpu_shmem3_SOURCES_CU  = heat3d_solver_gpu_shmem3.cu
+heat3d_solver_gpu_shmem3_OBJECTS = $(heat3d_solver_gpu_shmem3_SOURCES_CU:.cu=.o)
+heat3d_solver_gpu_shmem3: $(heat3d_solver_gpu_shmem3_OBJECTS) libHeatCommon.so
+	@echo "#####################################################"
+	@echo "BUILD : $@"
+	@echo "#####################################################"
+	$(CXX) $(CXXFLAGS)  -o $@ $(heat3d_solver_gpu_shmem3_OBJECTS) -lcudart $(CUTIL_LDFLAGS) $(HEAT_LDFLAGS) $(EXTRA_LDFLAGS)
+
+#
+# heat3d_solver_gpu_shmem4
+#
+heat3d_solver_gpu_shmem4_SOURCES_CU  = heat3d_solver_gpu_shmem4.cu
+heat3d_solver_gpu_shmem4_OBJECTS = $(heat3d_solver_gpu_shmem4_SOURCES_CU:.cu=.o)
+heat3d_solver_gpu_shmem4: $(heat3d_solver_gpu_shmem4_OBJECTS) libHeatCommon.so
+	@echo "#####################################################"
+	@echo "BUILD : $@"
+	@echo "#####################################################"
+	$(CXX) $(CXXFLAGS)  -o $@ $(heat3d_solver_gpu_shmem4_OBJECTS) -lcudart $(CUTIL_LDFLAGS) $(HEAT_LDFLAGS) $(EXTRA_LDFLAGS)
+
+#
+# heat2d_glut_cpu : solve heat equation on CPU with GLUT window
+#
+heat2d_glut_cpu_SOURCES = main_glut.cpp
+heat2d_glut_cpu_OBJECTS = $(heat2d_glut_cpu_SOURCES:.cpp=.o)
+heat2d_glut_cpu: $(heat2d_glut_cpu_OBJECTS) libHeatCommon.so
+	@echo "#####################################################"
+	@echo "BUILD : $@"
+	@echo "#####################################################"
+	$(CXX) $(CXXFLAGS) -o $@ $(heat2d_glut_cpu_OBJECTS) $(HEAT_LDFLAGS) $(EXTRA_LDFLAGS) -lglut -lGL -lGLEW
+
+#
+# heat2d_glut_gpu : solve heat equation on GPU with GLUT window
+#
+# Notice that main_glut.cu is just a symbolic link to main_glut.cpp
+#
+heat2d_glut_gpu_SOURCES = main_glut_gpu.cu
+heat2d_glut_gpu_OBJECTS = $(heat2d_glut_gpu_SOURCES:.cu=.o)
+heat2d_glut_gpu: $(heat2d_glut_gpu_OBJECTS) libHeatCommon.so
+	@echo "#####################################################"
+	@echo "BUILD : $@"
+	@echo "#####################################################"
+	$(CXX) $(CXXFLAGS) -o $@ $(heat2d_glut_gpu_OBJECTS) -lcudart $(CUTIL_LDFLAGS) $(HEAT_LDFLAGS) $(EXTRA_LDFLAGS) -lglut -lGL -lGLEW
+
+################################################
+.PHONY: all doc clean
+
+doc:
+	@echo "DOC"
+	cd ./doc && doxygen Doxyfile.dox && cd ..
+
+clean:
+	@echo "CLEAN"
+	\rm -f $(EXEC) heat2d_glut_gpu *.so
+	\rm -f *.o *.cudafe* *.linkinfo *.cu.cpp *.fatbin *.hash *.log
+	\rm -f *.xsm *.png *.bin *.pgm *.vti *.h5 *.hdf5 *.xmf

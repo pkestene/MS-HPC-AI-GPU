@@ -1,0 +1,73 @@
+# -*- getpot -*- GetPot mode activation for emacs
+#
+# Example parameter file for the heat equation solver (FCTS scheme)
+#
+#
+
+################################
+[geometry]
+
+# For 2D run, use NZ=1
+
+#NX=4211
+#NY=3999
+#NZ=1
+
+#NX=10000
+#NY=10000
+#NZ=1
+
+#NX=512
+#NY=512
+#NZ=45
+
+#NX=261
+#NY=243
+#NZ=200
+
+#NX=267
+#NY=245
+#NZ=128
+
+#NX=256
+#NY=256
+#NZ=256
+
+NX=163
+NY=162
+NZ=25
+
+LX=1.0
+LY=1.0
+LZ=1.0
+[]
+
+################################
+[scheme]
+CFL=0.125   # control scheme stability
+ALPHA=1.0
+useOrder2='yes'
+useOrder2b='no'
+useOrder4='no'
+[]
+
+################################
+[run]
+# problem name for initialization
+PROBLEM='square'
+
+# number of iterations
+N_ITER=1
+
+# number of steps between outputs (choose an even number)
+T_OUTPUT=1
+[]
+
+################################
+[output]
+SAVE_MGL='no'
+SAVE_VTK='yes'
+SAVE_PGM='no'
+SAVE_HDF5='no'
+ENABLE_GPU_SAVE='no'
+[]
