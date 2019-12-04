@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-project(cuda-proj-tmpl LANGUAGES CXX C)
+project(LBMcpp LANGUAGES CXX C)
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_EXTENSIONS OFF)
