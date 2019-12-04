@@ -31,7 +31,8 @@ To implement the "special hack" in step 2 above, we customize the compiler class
 ## Quick start
 
 ``` shell
-python3 setup build_ext --inplace
+module load cuda
+python3 setup.py build_ext --inplace
 cd src
 python3 test.py
 ```

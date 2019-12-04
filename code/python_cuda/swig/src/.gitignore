@@ -1,2 +1,3 @@
 _gpuadder.cpython-36m-x86_64-linux-gnu.so
 gpuadder.egg-info
+__pycache__
