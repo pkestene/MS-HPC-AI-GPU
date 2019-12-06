@@ -74,6 +74,7 @@ Resources pour le cours d'introduction à la programmation des GPUs du [mastère
 - https://ep2019.europython.eu/media/conference/slides/fX8dJsD-distributed-multi-gpu-computing-with-dask-cupy-and-rapids.pdf
 - https://github.com/NVIDIA/DeepLearningExamples
 - https://github.com/chagaz/hpc-ai-ml-2019
+- [tensorflow tutorial](https://github.com/eth-cscs/SummerSchool2019/tree/master/topics/tensorflow)
 
 ### Graphics / GPU
 
@@ -103,7 +104,9 @@ Resources pour le cours d'introduction à la programmation des GPUs du [mastère
 - https://perso.centrale-marseille.fr/~gchiavassa/visible/HPC/01%20-%20GR%20%20Intro%20to%20GPU%20programming%20V2%20OpenACC%20.pdf
 - [Jeff Larkin (Nvidia) Introduction to openACC](https://www.openacc.org/sites/default/files/inline-files/OpenACC_Course_Oct2018/OpenACC%20Course%202018%20Week%201.pdf)
 - [Jeff Larkin (Nvidia) OpenACC data management](https://www.openacc.org/sites/default/files/inline-files/OpenACC_Course_Oct2018/OpenACC%20Course%202018%20Week%202.pdf)
-- [Jeff Larkin (Nvidia) OpenACC optimizations](https://www.openacc.org/sites/default/files/inline-files/OpenACC_Course_Oct2018/OpenACC%20Course%202018%20Week%203.pdf) 
+- [Jeff Larkin (Nvidia) OpenACC optimizations](https://www.openacc.org/sites/default/files/inline-files/OpenACC_Course_Oct2018/OpenACC%20Course%202018%20Week%203.pdf)
+- https://www.pgroup.com/resources/docs/19.10/pdf/pgi19proftut.pdf
+
 
 ### Books on GPU programming / recommended reading
 
@@ -133,6 +136,7 @@ Resources pour le cours d'introduction à la programmation des GPUs du [mastère
 - [CSCS computing center training on C++ videos](https://www.cscs.ch/publications/tutorials/2019/videos-of-workshop-advanced-c/)
 - [CppCon](https://github.com/CppCon/) and [videos on YouTube](https://www.youtube.com/user/CppCon)
 - [Bo Qiang YouTube channel on C++11](https://www.youtube.com/channel/UCEOGtxYTB6vo6MQ-WQ9W_nQ)
+- https://github.com/TheAlgorithms/C-Plus-Plus
 
 
 ### high-level C++ libraries for programming GPUs
