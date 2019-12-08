@@ -97,6 +97,8 @@ Resources pour le cours d'introduction à la programmation des GPUs du [mastère
 
 ### OpenAcc
 
+- [OpenACC Programming and Best Practices Guide](https://www.openacc.org/sites/default/files/inline-files/OpenACC_Programming_Guide_0.pdf)
+- [PGI compiler - OpenACC getting started guide](https://www.pgroup.com/resources/docs/19.10/x86/openacc-gs/index.htm)
 - https://www.fz-juelich.de/SharedDocs/Downloads/IAS/JSC/EN/slides/openacc/2-openacc-introduction.pdf?__blob=publicationFile
 - [Introduction to GPU programming using OpenACC](https://www.fzj.de/ias/jsc/EN/Expertise/Services/Documentation/presentations/presentation-openacc_table.html)
 - https://github.com/eth-cscs/SummerSchool2019/tree/master/topics/openacc
