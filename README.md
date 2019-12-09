@@ -139,6 +139,7 @@ Resources pour le cours d'introduction à la programmation des GPUs du [mastère
 - [CppCon](https://github.com/CppCon/) and [videos on YouTube](https://www.youtube.com/user/CppCon)
 - [Bo Qiang YouTube channel on C++11](https://www.youtube.com/channel/UCEOGtxYTB6vo6MQ-WQ9W_nQ)
 - https://github.com/TheAlgorithms/C-Plus-Plus
+- [cours de C++ de l'université de Strasbourg](http://irma.math.unistra.fr/~franck/cours/Cpp1819/cpp1819English.html)
 
 
 ### high-level C++ libraries for programming GPUs
