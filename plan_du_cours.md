@@ -92,6 +92,10 @@ Que signifie l'acronyme CUDA ? Que désigne-t'il ?
 
 # Travaux pratiques
 
+- prise en main des plateformes
+ * Amazon Web Service EC2
+ * ROMEOLAB
+
 - mise en oeuvre de CUDA sur 
  * des exemples simples: noyaux BLAS
  * multiplication de matrices pleines ou transposition de matrice 
