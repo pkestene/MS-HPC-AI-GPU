@@ -95,6 +95,7 @@ Resources pour le cours d'introduction à la programmation des GPUs du [mastère
 
 - https://www.openmp.org/wp-content/uploads/SC17-OpenMPBooth_jlarkin.pdf
 - [OpenMP 5.0 for accelerators at GTC 2019](https://developer.download.nvidia.com/video/gputechconf/gtc/2019/presentation/s9353-openmp-5-for-accelerators-and-what-comes-next.pdf)
+- [LLVM/Clang based compiler for both AMD/NVidia GPUs](https://github.com/ROCm-Developer-Tools/aomp)
 
 ### OpenACC
 
