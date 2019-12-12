@@ -109,7 +109,7 @@ Resources pour le cours d'introduction à la programmation des GPUs du [mastère
 - [Jeff Larkin (Nvidia) OpenACC data management](https://www.openacc.org/sites/default/files/inline-files/OpenACC_Course_Oct2018/OpenACC%20Course%202018%20Week%202.pdf)
 - [Jeff Larkin (Nvidia) OpenACC optimizations](https://www.openacc.org/sites/default/files/inline-files/OpenACC_Course_Oct2018/OpenACC%20Course%202018%20Week%203.pdf)
 - https://www.pgroup.com/resources/docs/19.10/pdf/pgi19proftut.pdf
-
+- https://github.com/OpenACCUserGroup/openacc_concept_strategies_book
 
 ### Books on GPU programming / recommended reading
 

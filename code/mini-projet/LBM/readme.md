@@ -22,8 +22,9 @@ Additional references about border conditions in LBM:
 
 # Porting LBM simulation to GPU
 
-You have two choices for the mini-project:
+You have three choices for the mini-project:
 
 - use pure CUDA/C++ to adapt the C++ serial version from directory `cpp`
+- use OpenACC to port the C++ serial version
 - use numba and/or CuPy to adapt the python code `python/lbmFlowAroundCylinder.py` 
 
