@@ -75,6 +75,7 @@ Resources pour le cours d'introduction à la programmation des GPUs du [mastère
 - https://github.com/NVIDIA/DeepLearningExamples
 - https://github.com/chagaz/hpc-ai-ml-2019
 - [tensorflow tutorial](https://github.com/eth-cscs/SummerSchool2019/tree/master/topics/tensorflow)
+- [AI cheatsheet](doc/ai_cheatsheet.pdf)
 
 ### Graphics / GPU
 
