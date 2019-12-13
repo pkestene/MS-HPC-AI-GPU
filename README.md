@@ -75,6 +75,7 @@ Resources pour le cours d'introduction à la programmation des GPUs du [mastère
 - https://github.com/NVIDIA/DeepLearningExamples
 - https://github.com/chagaz/hpc-ai-ml-2019
 - [tensorflow tutorial](https://github.com/eth-cscs/SummerSchool2019/tree/master/topics/tensorflow)
+- [AI cheatsheet](doc/ai_cheatsheet.pdf)
 
 ### Graphics / GPU
 
@@ -94,8 +95,9 @@ Resources pour le cours d'introduction à la programmation des GPUs du [mastère
 
 - https://www.openmp.org/wp-content/uploads/SC17-OpenMPBooth_jlarkin.pdf
 - [OpenMP 5.0 for accelerators at GTC 2019](https://developer.download.nvidia.com/video/gputechconf/gtc/2019/presentation/s9353-openmp-5-for-accelerators-and-what-comes-next.pdf)
+- [LLVM/Clang based compiler for both AMD/NVidia GPUs](https://github.com/ROCm-Developer-Tools/aomp)
 
-### OpenAcc
+### OpenACC
 
 - [OpenACC Programming and Best Practices Guide](https://www.openacc.org/sites/default/files/inline-files/OpenACC_Programming_Guide_0.pdf)
 - [PGI compiler - OpenACC getting started guide](https://www.pgroup.com/resources/docs/19.10/x86/openacc-gs/index.htm)
@@ -104,7 +106,7 @@ Resources pour le cours d'introduction à la programmation des GPUs du [mastère
 - https://github.com/eth-cscs/SummerSchool2019/tree/master/topics/openacc
 - https://developer.nvidia.com/openacc-overview-course
 - https://perso.centrale-marseille.fr/~gchiavassa/visible/HPC/01%20-%20GR%20%20Intro%20to%20GPU%20programming%20V2%20OpenACC%20.pdf
-- [Jeff Larkin (Nvidia) Introduction to openACC](https://www.openacc.org/sites/default/files/inline-files/OpenACC_Course_Oct2018/OpenACC%20Course%202018%20Week%201.pdf)
+- [Jeff Larkin (Nvidia) Introduction to OpenACC](https://www.openacc.org/sites/default/files/inline-files/OpenACC_Course_Oct2018/OpenACC%20Course%202018%20Week%201.pdf)
 - [Jeff Larkin (Nvidia) OpenACC data management](https://www.openacc.org/sites/default/files/inline-files/OpenACC_Course_Oct2018/OpenACC%20Course%202018%20Week%202.pdf)
 - [Jeff Larkin (Nvidia) OpenACC optimizations](https://www.openacc.org/sites/default/files/inline-files/OpenACC_Course_Oct2018/OpenACC%20Course%202018%20Week%203.pdf)
 - https://www.pgroup.com/resources/docs/19.10/pdf/pgi19proftut.pdf
