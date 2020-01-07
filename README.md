@@ -158,7 +158,7 @@ Alternate programming models for programming modern computing architectures in a
 
 ### CMake
 
-- [cmake-cookbook](https://github.com/dev-cafe/cmake-cookbook)
+- [cmake-cookbook](https://github.com/dev-cafe/cmake-cookbook) and the [book](https://www.packtpub.com/application-development/cmake-cookbook)
 - [Modern CMake tutorial](https://cliutils.gitlab.io/modern-cmake/)
 - [template CMake project for CUDA](https://github.com/pkestene/cuda-proj-tmpl)
 - [GPUs for science day](https://www.nersc.gov/assets/GPUs-for-Science-Day/jonathan-madsen.pdf)
