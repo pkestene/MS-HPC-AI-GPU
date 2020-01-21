@@ -26,6 +26,7 @@ Resources pour le cours d'introduction à la programmation des GPUs du [mastère
 - [Swiss CSCS summer school](https://github.com/eth-cscs/SummerSchool2019.git)
 - [Amina Guermouche (Telecom Paris)](http://www-inf.telecom-sudparis.eu/COURS/CSC5001/new_site/Supports/Cours/GPU/csc5001-cuda.pdf)
 - [EPCC, Univ Edinburgh, GPU training](https://github.com/EPCCed/archer-gpu-course)
+- [ARCHER GPU course](https://github.com/EPCCed/archer-gpu-course)
 - [Univ Luxembourg HPC](https://www.hpcwire.com/2019/11/14/at-sc19-what-is-urgenthpc-and-why-is-it-needed/)
 - [SC19 Introduction to GPU programming with CUDA](http://icl.utk.edu/~mgates3/gpu-tutorial/)
 - https://codingbyexample.com/category/cuda/
