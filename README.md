@@ -68,6 +68,7 @@ Resources pour le cours d'introduction à la programmation des GPUs du [mastère
 - [PythonHPC](https://github.com/eth-cscs/PythonHPC)
 - [HPC Python video's](https://www.cscs.ch/publications/tutorials/2018/high-performance-computing-with-python/)
 - [Hands-On GPU Programming with Python and CUDA](https://www.oreilly.com/library/view/hands-on-gpu-programming/9781788993913/) and [examples](https://github.com/PacktPublishing/Hands-On-GPU-Programming-with-Python-and-CUDA/tree/9e3473f834123860726712dca6259bb4e057a001)
+- [2020-geilo-gpu-python](https://github.com/inducer/2020-geilo-gpu-python)
 
 ### Machine learning and Deep Learning
 
