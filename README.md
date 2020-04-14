@@ -137,7 +137,7 @@ Resources pour le cours d'introduction à la programmation des GPUs du [mastère
 - list of Lists of C++ related resources: https://github.com/fffaraz/awesome-cpp
 - list of books on C++ : https://github.com/fffaraz/awesome-cpp/blob/master/books.md
 - [C++ idioms](https://en.wikibooks.org/wiki/More_C%2B%2B_Idioms)
-- [Design Patterns](https://en.wikibooks.org/wiki/C%2B%2B_Programming/Code/Design_Patterns)
+- [Design Patterns](https://en.wikibooks.org/wiki/C%2B%2B_Programming/Code/Design_Patterns) and [Book on design patterns for modern c++](https://github.com/PacktPublishing/Hands-On-Design-Patterns-with-CPP)
 - [Julich training on C++](https://www.fz-juelich.de/SharedDocs/Downloads/IAS/JSC/EN/slides/cplusplus/cplusplus.pdf?)
 - [CSCS computing center training on C++ videos](https://www.cscs.ch/publications/tutorials/2019/videos-of-workshop-advanced-c/)
 - [CppCon](https://github.com/CppCon/) and [videos on YouTube](https://www.youtube.com/user/CppCon)
