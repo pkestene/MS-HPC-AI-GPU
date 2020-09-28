@@ -16,7 +16,7 @@ Resources pour le cours d'introduction à la programmation des GPUs du [mastère
 - [San Diego Summer institute](https://github.com/sdsc/sdsc-summer-institute-2019)
 - [Finnish CSC summer school](https://github.com/csc-training/summerschool)
 - [Computational Physics book by K. N. Anagnostopoulos](http://www.physics.ntua.gr/~konstant/ComputationalPhysics/C++/Book/ComputationalPhysicsKNA2ndEd_nocover.pdf)
-- [Modern computer architecture slides](https://moodle.rrze.uni-erlangen.de/pluginfile.php/12916/mod_resource/content/6/01_IntroArchitecture.pdf)
+- [Modern computer architecture slides](https://moodle.rrze.uni-erlangen.de/course/view.php?id=274), see e.g. slides [Intro_Architecture.pdf](https://moodle.rrze.uni-erlangen.de/pluginfile.php/12916/mod_resource/content/9/01_Intro-Architecture.pdf)
 
 ### CUDA / GPU training
 
