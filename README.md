@@ -6,7 +6,7 @@ Resources pour le cours d'introduction à la programmation des GPUs du [mastère
 
 ### Scientific Programming and Computer Architecture
 
-- [Scientific Programming and Computer Architecture](https://oapen.org/viewer/web/viewer.html?file=https://oapen.org/document/1004044) book by Divakar Viswanath
+- [Scientific Programming and Computer Architecture](https://github.com/divakarvi/bk-spca) book by Divakar Viswanath
 - https://github.com/divakarvi/bk-spca : source associated to the book
 - [Definition of latency oriented architecture](https://en.wikipedia.org/wiki/Latency_oriented_processor_architecture)
 - [Seven Dwarfs of HPC](https://moodle.rrze.uni-erlangen.de/course/view.php?id=113&lang=en)
