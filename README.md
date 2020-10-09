@@ -17,6 +17,7 @@ Resources pour le cours d'introduction à la programmation des GPUs du [mastère
 - [Finnish CSC summer school](https://github.com/csc-training/summerschool)
 - [Computational Physics book by K. N. Anagnostopoulos](http://www.physics.ntua.gr/~konstant/ComputationalPhysics/C++/Book/ComputationalPhysicsKNA2ndEd_nocover.pdf)
 - [Modern computer architecture slides](https://moodle.rrze.uni-erlangen.de/course/view.php?id=274), see e.g. slides [Intro_Architecture.pdf](https://moodle.rrze.uni-erlangen.de/pluginfile.php/12916/mod_resource/content/9/01_Intro-Architecture.pdf)
+- [Structure and Interpretation of Computer Programs](https://library.oapen.org/handle/20.500.12657/26092)
 
 ### CUDA / GPU training
 
