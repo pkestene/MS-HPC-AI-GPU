@@ -97,9 +97,13 @@ Resources pour le cours d'introduction à la programmation des GPUs du [mastère
 
 ### OpenMP target
 
+- How to build yourself clang with OpenMP target support for Nvidia GPUs
+  - https://hpc-wiki.info/hpc/Building_LLVM/Clang_with_OpenMP_Offloading_to_NVIDIA_GPUs
+  - //devmesh.intel.com/blog/724749/how-to-build-and-run-your-modern-parallel-code-in-c-17-and-openmp-4-5-library-on-nvidia-gpus
 - https://www.openmp.org/wp-content/uploads/SC17-OpenMPBooth_jlarkin.pdf
 - [OpenMP 5.0 for accelerators at GTC 2019](https://developer.download.nvidia.com/video/gputechconf/gtc/2019/presentation/s9353-openmp-5-for-accelerators-and-what-comes-next.pdf)
 - [LLVM/Clang based compiler for both AMD/NVidia GPUs](https://github.com/ROCm-Developer-Tools/aomp)
+- [OpenMP target examples](https://github.com/pkestene/OMP-Offloading)
 
 ### OpenACC
 
@@ -115,6 +119,7 @@ Resources pour le cours d'introduction à la programmation des GPUs du [mastère
 - [Jeff Larkin (Nvidia) OpenACC optimizations](https://www.openacc.org/sites/default/files/inline-files/OpenACC_Course_Oct2018/OpenACC%20Course%202018%20Week%203.pdf)
 - https://www.pgroup.com/resources/docs/19.10/pdf/pgi19proftut.pdf
 - https://github.com/OpenACCUserGroup/openacc_concept_strategies_book
+- https://developer.nvidia.com/blog/solar-storm-modeling-gpu-openacc/
 
 ### Books on GPU programming / recommended reading
 
