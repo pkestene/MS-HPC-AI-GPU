@@ -52,6 +52,7 @@ Resources pour le cours d'introduction à la programmation des GPUs du [mastère
 - https://www.olcf.ornl.gov/wp-content/uploads/2019/08/NVIDIA-Profilers.pdf
 - http://on-demand.gputechconf.com/gtc/2017/presentation/s7445-jakob-progsch-what-the-profiler-is-telling-you.pdf
 - monitoring performance : https://github.com/NERSC/timemory
+- [roofline model](https://www.nersc.gov/assets/Uploads/Talk-GTC2019-Roofline.pdf)
 
 ### Other CUDA resources
 
