@@ -105,6 +105,12 @@ Resources pour le cours d'introduction à la programmation des GPUs du [mastère
 - [LLVM/Clang based compiler for both AMD/NVidia GPUs](https://github.com/ROCm-Developer-Tools/aomp)
 - [OpenMP target examples](https://github.com/pkestene/OMP-Offloading)
 
+How to build clang++ with openmp target (off-loading) support ?
+
+- https://devmesh.intel.com/blog/724749/how-to-build-and-run-your-modern-parallel-code-in-c-17-and-openmp-4-5-library-on-nvidia-gpus
+- https://hpc-wiki.info/hpc/Building_LLVM/Clang_with_OpenMP_Offloading_to_NVIDIA_GPUs
+
+
 ### OpenACC
 
 - [OpenACC Programming and Best Practices Guide](https://www.openacc.org/sites/default/files/inline-files/OpenACC_Programming_Guide_0.pdf)
@@ -120,6 +126,34 @@ Resources pour le cours d'introduction à la programmation des GPUs du [mastère
 - https://www.pgroup.com/resources/docs/19.10/pdf/pgi19proftut.pdf
 - https://github.com/OpenACCUserGroup/openacc_concept_strategies_book
 - https://developer.nvidia.com/blog/solar-storm-modeling-gpu-openacc/
+
+Which compiler with OpenAcc support ?
+- [Nvidia/PGI compiler](https://developer.nvidia.com/hpc-sdk) is the oldest and probably more mature OpenACC compiler. 
+- [GNU/gcc](https://www.openacc.org/tools/gcc-for-openacc) provided by [Spack](https://spack.readthedocs.io/en/latest/) is the easiest way to get started for OpenMP/OpenACC offload with the GNU compiler.
+
+### C++17 and parallel STL for CPU/GPU
+
+- [accelerating-standard-c-with-gpus-using-stdpar/](https://developer.nvidia.com/blog/accelerating-standard-c-with-gpus-using-stdpar/) for Nivia GPUs
+- a real life example in CFD: [LULESH](https://github.com/LLNL/LULESH/tree/2.0.2-dev/stdpar)
+- another reference in CFD [stdpar for Lattice Boltzmann simulation](https://arxiv.org/pdf/2010.11751.pdf) and its [companion code](https://gitlab.com/unigehpfs/stlbm)
+- https://github.com/shwina/stdpar-cython/
+- https://software.intel.com/content/www/us/en/develop/articles/get-started-with-parallel-stl.html
+
+Which compiler ?
+- [Nvidia/PGI compiler](https://developer.nvidia.com/hpc-sdk) for Nvidia GPUs
+- GNU g++ version >= 9.1  (+ TBB) for multicore CPUs
+- clang >= 10.0.1 for multicore CPUs
+- [Intel OneApi HPC Toolkit](https://software.intel.com/content/www/us/en/develop/tools/oneapi/hpc-toolkit.html)
+
+### SYCL
+
+- [Khronos](https://www.khronos.org/sycl/resources)
+- [syclacademy](https://github.com/codeplaysoftware/syclacademy)
+- [oneAPI-samples](https://github.com/oneapi-src/oneAPI-samples)
+- Compilers / toolchain
+  * [codeplay](https://developer.codeplay.com/home/)
+  * [Intel OneAPI](https://software.intel.com/content/www/us/en/develop/tools/oneapi/components/dpc-compiler.html). If you want Nvidia GPU support, you'll have to rebuild llvm/clang from the [source code](https://github.com/intel/llvm), see [instructions](https://github.com/intel/llvm/blob/sycl/sycl/doc/GetStartedGuide.md#build-dpc-toolchain-with-support-for-nvidia-cuda); OneAPI DPC++ actually is a SYCL implementation + [extensions](https://github.com/intel/llvm/tree/sycl/sycl/doc/extensions) ( Unified Shared Memory, Explicit SIMD, ...)
+  * [triSYCL](https://github.com/triSYCL/triSYCL) for [Xilinx FPGA target](https://raw.githubusercontent.com/keryell/ronan/gh-pages/Talks/2019/2019-11-17-SC19-H2RC-keynote-SYCL/2019-11-17-SC19-H2RC-keynote-SYCL.pdf)
 
 ### Books on GPU programming / recommended reading
 
