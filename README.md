@@ -151,9 +151,10 @@ Which compiler ?
 - [Khronos](https://www.khronos.org/sycl/resources)
 - [syclacademy](https://github.com/codeplaysoftware/syclacademy)
 - [oneAPI-samples](https://github.com/oneapi-src/oneAPI-samples)
+- [more oneAPI / SYCL samples](https://github.com/zjin-lcf/oneAPI-DirectProgramming)
 - Compilers / toolchain
   * [codeplay](https://developer.codeplay.com/home/)
-  * [Intel OneAPI](https://software.intel.com/content/www/us/en/develop/tools/oneapi/components/dpc-compiler.html). If you want Nvidia GPU support, you'll have to rebuild llvm/clang from the [source code](https://github.com/intel/llvm), see [instructions](https://github.com/intel/llvm/blob/sycl/sycl/doc/GetStartedGuide.md#build-dpc-toolchain-with-support-for-nvidia-cuda); OneAPI DPC++ actually is a SYCL implementation + [extensions](https://github.com/intel/llvm/tree/sycl/sycl/doc/extensions) ( Unified Shared Memory, Explicit SIMD, ...)
+  * [Intel OneAPI](https://software.intel.com/content/www/us/en/develop/tools/oneapi/components/dpc-compiler.html). If you want Nvidia GPU support, you'll have to rebuild llvm/clang from the [source code](https://github.com/intel/llvm), see [instructions](https://github.com/intel/llvm/blob/sycl/sycl/doc/GetStartedGuide.md#build-dpc-toolchain-with-support-for-nvidia-cuda); OneAPI DPC++ actually is a SYCL implementation + [extensions](https://github.com/intel/llvm/tree/sycl/sycl/doc/extensions) (Unified Shared Memory, Explicit SIMD, ...)
   * [triSYCL](https://github.com/triSYCL/triSYCL) for [Xilinx FPGA target](https://raw.githubusercontent.com/keryell/ronan/gh-pages/Talks/2019/2019-11-17-SC19-H2RC-keynote-SYCL/2019-11-17-SC19-H2RC-keynote-SYCL.pdf)
 
 ### Books on GPU programming / recommended reading
@@ -161,7 +162,7 @@ Which compiler ?
 - [The CUDA Handbook: A Comprehensive Guide to GPU Programming](http://www.cudahandbook.com/), by Nicholas Wilt, Pearson Education.
 - [CUDA by example](https://www.amazon.com/CUDA-Example-Introduction-General-Purpose-Programming/dp/0131387685/ref=pd_bbs_sr_1/103-9839083-1501412?ie=UTF8&s=books&qid=1186428068&sr=1-1), by Sanders and Kandrot, Addison-Wesley, 2010. Also available in [pdf](http://www.mat.unimi.it/users/sansotte/cuda/CUDA_by_Example.pdf)
 - [Learn CUDA programming](https://www.packtpub.com/eu/application-development/cuda-cookbook) by B. Sharma and J. Han, Packt Publishing, 2019
-- Python + CUDA : https://github.com/PacktPublishing/Hands-On-GPU-Programming-with-Python-and-CUDA 
+- Python + CUDA : https://github.com/PacktPublishing/Hands-On-GPU-Programming-with-Python-and-CUDA
 - https://www.oreilly.com/library/view/hands-on-gpu-programming/9781788993913/ by Brian Tuomanen
 
 ### C++ resources
