@@ -152,10 +152,13 @@ Which compiler ?
 - [syclacademy](https://github.com/codeplaysoftware/syclacademy)
 - [oneAPI-samples](https://github.com/oneapi-src/oneAPI-samples)
 - [more oneAPI / SYCL samples](https://github.com/zjin-lcf/oneAPI-DirectProgramming)
+- [a short tutorial](https://github.com/jeffhammond/dpcpp-tutorial)
 - Compilers / toolchain
   * [codeplay](https://developer.codeplay.com/home/)
   * [Intel OneAPI](https://software.intel.com/content/www/us/en/develop/tools/oneapi/components/dpc-compiler.html). If you want Nvidia GPU support, you'll have to rebuild llvm/clang from the [source code](https://github.com/intel/llvm), see [instructions](https://github.com/intel/llvm/blob/sycl/sycl/doc/GetStartedGuide.md#build-dpc-toolchain-with-support-for-nvidia-cuda); OneAPI DPC++ actually is a SYCL implementation + [extensions](https://github.com/intel/llvm/tree/sycl/sycl/doc/extensions) (Unified Shared Memory, Explicit SIMD, ...)
   * [triSYCL](https://github.com/triSYCL/triSYCL) for [Xilinx FPGA target](https://raw.githubusercontent.com/keryell/ronan/gh-pages/Talks/2019/2019-11-17-SC19-H2RC-keynote-SYCL/2019-11-17-SC19-H2RC-keynote-SYCL.pdf)
+- [Comparison Kokkos/SYCL (early 2020)](http://uob-hpc.github.io/2020/01/06/cloverleaf-sycl.html)
+
 
 ### Books on GPU programming / recommended reading
 
