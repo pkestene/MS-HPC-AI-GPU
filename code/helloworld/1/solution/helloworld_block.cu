@@ -12,8 +12,9 @@
 
 __global__ void hello()
 {
-  printf("I'm a thread %d in block %d\n",
-         threadIdx.x, blockIdx.x);
+  printf("I'm a thread (%d,%d) in block (%d,%d)\n", 
+         threadIdx.x, threadIdx.y,
+         blockIdx.x, blockIdx.y);
 }
 
 
@@ -23,13 +24,14 @@ int main(int argc,char **argv)
   // default values for 
   // - gridSize :  number of blocks
   // - blockSize : number of threads per block
+  unsigned int gridSize  = argc > 1 ? atoi(argv[1]) : 2;
+  unsigned int blockSize = argc > 2 ? atoi(argv[2]) : 2;
 
-  unsigned int gridSize  = argc > 1 ? atoi(argv[1]) : 1;
-  unsigned int blockSize = argc > 2 ? atoi(argv[2]) : 16;
-
+  dim3 gridSize_2d  {gridSize,  gridSize};
+  dim3 blockSize_2d {blockSize, blockSize};
 
   // launch the kernel
-  hello<<<gridSize, blockSize>>>();
+  hello<<<gridSize_2d, blockSize_2d>>>();
   
   // force the printf()s to flush
   cudaDeviceSynchronize();

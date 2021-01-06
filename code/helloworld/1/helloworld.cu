@@ -1,3 +1,5 @@
+// nvcc helloworld.cu -o helloworld
+
 #include<stdio.h>
 #include<stdlib.h>
 

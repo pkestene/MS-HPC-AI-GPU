@@ -93,13 +93,14 @@ def wselect(args,dirname,names):
 
 class clean(_clean):
   def walkAndClean(self):
-    os.path.walk("..",wselect,[])
+    os.walk("..",wselect,[])
   def run(self):
     module_lib = pjoin('.',module_name+'.so')
     if (os.path.exists(module_lib)): os.remove(module_lib)
     if (os.path.exists('./wrapper.cpp')): os.remove('./wrapper.cpp')
     if (os.path.exists('./build')): remove_tree('./build')
     if (os.path.exists('./dist')):  remove_tree('./dist')
+    if (os.path.exists('__pycache__')):  remove_tree('./__pycache__')
     self.walkAndClean()
 
 # ----------------------------------------------------------------------
@@ -115,9 +116,9 @@ ext = Extension(module_name,
                 # we're only going to use certain compiler args with nvcc and not with gcc
                 # the implementation of this trick is in customize_compiler() below
                 extra_compile_args={'gcc': [],
-                                    'nvcc': ['-gencode', 'arch=compute_30,code=sm_30',
-                                             '-gencode', 'arch=compute_35,code=sm_35',
-                                             '-gencode', 'arch=compute_50,code=sm_50',
+                                    'nvcc': ['-gencode', 'arch=compute_50,code=sm_50',
+                                             '-gencode', 'arch=compute_75,code=sm_75',
+                                             '-gencode', 'arch=compute_80,code=sm_80',
                                              '--ptxas-options=-v',
                                              '-c',
                                              '--compiler-options',

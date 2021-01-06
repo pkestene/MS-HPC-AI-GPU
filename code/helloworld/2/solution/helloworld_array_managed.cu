@@ -1,7 +1,7 @@
 /*
  * How to build:
  *
- * nvcc -arch=sm_80 -o helloworld_array helloworld_array.cu
+ * nvcc -arch=sm_80 -o helloworld_array_managed helloworld_array_managed.cu
  */
 
 /*
@@ -68,41 +68,31 @@ int main( int argc, char* argv[] )
   // array size
   int N = 16;
 
-  // host variables
+  // host and device variables
   int *a, *b, *c;
 
-  // device variables
-  int *dev_a, *dev_b, *dev_c;
-  
-  // CPU memory allocation / initialization
-  a = (int *) malloc(N*sizeof(int));
-  b = (int *) malloc(N*sizeof(int));
-  c = (int *) malloc(N*sizeof(int));
-  for (int i=0; i<N; i++) {
-    a[i]=i;
-    b[i]=N-i;
+  // CPU / GPU memory allocation
+  CUDA_API_CHECK( cudaMallocManaged( &a, N*sizeof(int) ) );
+  CUDA_API_CHECK( cudaMallocManaged( &b, N*sizeof(int) ) );
+  CUDA_API_CHECK( cudaMallocManaged( &c, N*sizeof(int) ) );
+    
+  // CPU / GPU memory initialization
+  for (int i=0; i<N; i++)
+  {
+    a[i] = i;
+    b[i] = N-i;
+    c[i] = 0;
   }
-
-  // GPU device memory allocation / initialization
-  CUDA_API_CHECK( cudaMalloc( (void**)&dev_a, N*sizeof(int) ) );
-  CUDA_API_CHECK( cudaMalloc( (void**)&dev_b, N*sizeof(int) ) );
-  CUDA_API_CHECK( cudaMalloc( (void**)&dev_c, N*sizeof(int) ) );
-  CUDA_API_CHECK( cudaMemcpy( dev_a, a, N*sizeof(int),
-                              cudaMemcpyHostToDevice ) );
-  CUDA_API_CHECK( cudaMemcpy( dev_b, b, N*sizeof(int),
-                              cudaMemcpyHostToDevice ) );
-  
   
   // perform computation on GPU
   int nbThreadsPerBlock = 8;
   dim3 blockSize(nbThreadsPerBlock,1,1);
   dim3 gridSize(N/nbThreadsPerBlock+1,1,1);
-  add<<<gridSize,blockSize>>>( dev_a, dev_b, dev_c, N );
+  add<<<gridSize,blockSize>>>( a, b, c, N );
   CUDA_KERNEL_CHECK("add");
 
-  // get back computation result into host CPU memory
-  CUDA_API_CHECK( cudaMemcpy( c, dev_c, N*sizeof(int),
-                              cudaMemcpyDeviceToHost ) );
+  // Wait for GPU to finish before accessing array c on host
+  cudaDeviceSynchronize();
 
   // output result on screen
   int passed=1;
@@ -118,15 +108,10 @@ int main( int argc, char* argv[] )
     printf("test failed !\n");
   }
 
-  // de-allocate CPU host memory
-  free(c);
-  free(b);
-  free(a);
-
-  // de-allocate GPU device memory
-  CUDA_API_CHECK( cudaFree( dev_c ) );
-  CUDA_API_CHECK( cudaFree( dev_b ) );
-  CUDA_API_CHECK( cudaFree( dev_a ) );
+  // de-allocate CPU / GPU device memory
+  CUDA_API_CHECK( cudaFree( c ) );
+  CUDA_API_CHECK( cudaFree( b ) );
+  CUDA_API_CHECK( cudaFree( a ) );
 
   return EXIT_SUCCESS;
 }

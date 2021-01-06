@@ -1,3 +1,4 @@
 src/gpuadder.py
 src/swig_wrap.cpp
+src/_gpuadder.cpython*.so
 build

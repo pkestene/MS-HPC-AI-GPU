@@ -11,6 +11,11 @@ def test():
 
     results2 = np.empty_like(arr)
     adder.retreive_to(results2)
-    
+
     npt.assert_array_equal(arr, [2,3,3,3])
     npt.assert_array_equal(results2, [2,3,3,3])
+    print("All tests passed !")
+
+if __name__ == "__main__":
+    print("Testing swig-based gpuadder...")
+    test()

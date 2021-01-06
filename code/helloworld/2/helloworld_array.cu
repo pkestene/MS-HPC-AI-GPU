@@ -1,20 +1,12 @@
 /*
- * Copyright 1993-2010 NVIDIA Corporation.  All rights reserved.
+ * How to build:
  *
- * NVIDIA Corporation and its licensors retain all intellectual property and 
- * proprietary rights in and to this software and related documentation. 
- * Any use, reproduction, disclosure, or distribution of this software 
- * and related documentation without an express license agreement from
- * NVIDIA Corporation is strictly prohibited.
- *
- * Please refer to the applicable NVIDIA end user license agreement (EULA) 
- * associated with this source code for terms and conditions that govern 
- * your use of this NVIDIA software.
- * 
+ * nvcc -arch=sm_80 -o helloworld_array helloworld_array.cu
  */
 
 /*
- * CUDA by example, by Jason Sanders and Edward Kandrot,
+ * Originally from the book, CUDA by example, 
+ * by Jason Sanders and Edward Kandrot,
  * Addison-Wesley, 2010
  * http://developer.nvidia.com/cuda-example-introduction-general-purpose-gpu-programming
  */
@@ -46,51 +38,87 @@
  * 
  */
 
-/*
- * How to build:
- *
- * nvcc -Xcompiler -Wall  -arch=sm_50 -o helloworld helloworld.cu -lcudart
- */
-
 #include <stdio.h>
 
 #include "cuda_error.h"
 
 /**
- * a simple CUDA kernel adding two scalar values
+ * a simple CUDA kernel to add two arrays
  *
- * \param[in]  a input integer
- * \param[in]  b input integer
- * \param[out] c pointer-to-integer for result
+ * \param[in]  a input array
+ * \param[in]  b input array
+ * \param[out] c output array
+ * \param[in]  n array size
  */
-__global__ void add( int a, int b, int *c ) {
-  *c = a + b;
-}
+__global__ void add( int *a, int *b, int *c, int n )
+{
+
+  int i = /*  TODO */
+
+  if ( /* TODO */ )
+    c[i] = a[i] + b[i];
+
+} // add
 
 /*
  * main
  */
 int main( int argc, char* argv[] )
 {
-  int c;
-  int *dev_c;
-  
-  // GPU device memory allocation
-  CUDA_API_CHECK( cudaMalloc( (void**)&dev_c, sizeof(int) ) );
+  // array size
+  int N = 16;
 
+  // host variables
+  int *a, *b, *c;
+
+  // device variables
+  int *dev_a, *dev_b, *dev_c;
+  
+  // CPU memory allocation / initialization
+  a = (int *) malloc(N*sizeof(int));
+  b = (int *) malloc(N*sizeof(int));
+  c = (int *) malloc(N*sizeof(int));
+  for (int i=0; i<N; i++) {
+    a[i]=i;
+    b[i]=N-i;
+  }
+
+  // GPU device memory allocation / initialization
+  CUDA_API_CHECK( cudaMalloc( /* TODO */ ) );
+
+  CUDA_API_CHECK( cudaMemcpy( /* TODO */ );
+  
   // perform computation on GPU
-  add<<<1,1>>>( 2, 7, dev_c );
+  int nbThreadsPerBlock = 8;
+  dim3 blockSize(nbThreadsPerBlock,1,1);
+  dim3 gridSize(N/nbThreadsPerBlock+1,1,1);
+  add<<<gridSize,blockSize>>>( dev_a, dev_b, dev_c, N );
   CUDA_KERNEL_CHECK("add");
 
   // get back computation result into host CPU memory
-  CUDA_API_CHECK( cudaMemcpy( &c, dev_c, sizeof(int),
-                              cudaMemcpyDeviceToHost ) );
+  CUDA_API_CHECK( /* TODO */ );
 
   // output result on screen
-  printf( "2 + 7 = %d\n", c );
+  int passed=1;
+  for (int i=0; i<N; i++) {
+    if (c[i] != N) {
+      passed = 0;
+      printf("wrong value : %d %d\n",i,c[i]);
+    }
+  }
+  if (passed) {
+    printf("test succeeded !\n");
+  } else {
+    printf("test failed !\n");
+  }
+
+  // de-allocate CPU host memory
+  free(c);
+  free(b);
+  free(a);
 
   // de-allocate GPU device memory
-  CUDA_API_CHECK( cudaFree( dev_c ) );
+  CUDA_API_CHECK( cudaFree( /* TODO */ ) );
 
   return EXIT_SUCCESS;
 }

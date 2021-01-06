@@ -1,7 +1,7 @@
 /*
  * Please adapt to your actual hardware architecture.
  *
- * nvcc -arch=sm_50 -o helloworld_array2 helloworld_array2.cu -lnvToolsExt
+ * nvcc -arch=sm_80 -o helloworld_array2 helloworld_array2.cu -lnvToolsExt
  */
 
 /*

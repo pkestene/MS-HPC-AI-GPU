@@ -18,11 +18,15 @@ or
 
 if you want to install in $PYTHONUSERBASE
 
-or 
+or
 
 `$ python setup.py build_ext --inplace`
 
 to build module inplace, i.e. in current directory.
+
+## clean
+
+`$ python setup.py clean --all`
 
 ## test
 

@@ -1,7 +1,7 @@
 /*
  * Please adapt to your actual hardware architecture.
  *
- * nvcc -arch=sm_50 --ptxas-options -v -o helloworld_array helloworld_array.cu
+ * nvcc -arch=sm_80 --ptxas-options -v -o helloworld_array helloworld_array.cu
  */
 
 /*

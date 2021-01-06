@@ -79,9 +79,9 @@ ext = Extension('_gpuadder',
                 # we're only going to use certain compiler args with nvcc and not with gcc
                 # the implementation of this trick is in customize_compiler() below
                 extra_compile_args={'gcc': [],
-                                    'nvcc': ['-gencode', 'arch=compute_30,code=sm_30',
-                                             '-gencode', 'arch=compute_35,code=sm_35',
-                                             '-gencode', 'arch=compute_50,code=sm_50',
+                                    'nvcc': ['-gencode', 'arch=compute_50,code=sm_50',
+                                             '-gencode', 'arch=compute_75,code=sm_75',
+                                             '-gencode', 'arch=compute_80,code=sm_80',
                                              '--ptxas-options=-v',
                                              '-c',
                                              '--compiler-options',
