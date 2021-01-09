@@ -1,5 +1,5 @@
 /*
- * g++ -O3 saxpy_pthreads.cpp -o saxpy_pthreads
+ * g++ -pthread -O3 saxpy_pthreads.cpp -o saxpy_pthreads
  *
  */
 #include "SimpleTimer.h"
@@ -40,10 +40,9 @@ void saxpy(float* x, float *y, float* z, float a, int n)
 int main(int argc, char* argv[])
 {
 
-  // vector length
-  int N = 1<<22;
-  if (argc>1)
-    N = atoi(argv[1]);
+  // log2 of vector length
+  int log2N = (argc > 1) ? atoi(argv[1]) : 22;
+  int N = 1 << log2N;
 
   // First create an instance of an engine.
   std::random_device rnd_device;

@@ -93,14 +93,13 @@ __global__ void saxpy_cuda(int n, float alpha, const float *x, float *y)
 int main (int argc, char **argv)
 {
 
+  // base-2 log of array size
+  int log2N = argc > 1 ? atoi(argv[1]) : 22;
+
   // problem size (vector length) N
   //size_t N = 1234567;
-  size_t N = 1<<22;
+  size_t N = 1 << log2N;
   //size_t N = 40000;
-
-  if (argc>1)
-    N = atoi(argv[1]);
-
 
   SimpleTimer cpuTimer;
   OpenMPTimer ompTimer;

@@ -4,7 +4,7 @@
 # or using "module load cuda"
 CUDA_INC_PATH=${CUDA_PATH}/include
 CUDA_LIB_PATH=${CUDA_PATH}/lib64
-CUDA_ARCH ?= sm_30
+CUDA_ARCH ?= sm_80
 
 
 CC=nvcc
