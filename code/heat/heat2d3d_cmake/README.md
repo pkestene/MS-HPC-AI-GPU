@@ -6,7 +6,8 @@
 
 - configure and build:
  ```shell
- cmake . (or ccmake .)
+ mkdir build; cd build
+ cmake .. (or ccmake ..)
  make
  ```
 
