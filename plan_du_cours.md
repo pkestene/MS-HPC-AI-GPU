@@ -32,8 +32,8 @@ Que signifie l'acronyme CUDA ? Que désigne-t'il ?
 
 ## Architecture matérielle des GPU
 
-- qu'est qu'un "streaming processor" ? 
-- sur quels éléments repose la puissance de calcul des GPU ? 
+- qu'est qu'un "streaming processor" ?
+- sur quels éléments repose la puissance de calcul des GPU ?
 - comment sont séquencés les threads GPU ?
 - que signifie l'acronyme SIMT ?
 
@@ -42,7 +42,7 @@ Que signifie l'acronyme CUDA ? Que désigne-t'il ?
 - modèle PTX : Parallel Thread Execution
 - qu'est ce qu'un "warp" ?
 - qu'est qu'un noyau de calcul CUDA ?
-- modèle hiérarchique de grille de blocs de threads; comment paramétrer l'exécution d'un noyau CUDA ? Quel lien y a-t'il avec l'architecture matérielle ? 
+- modèle hiérarchique de grille de blocs de threads; comment paramétrer l'exécution d'un noyau CUDA ? Quel lien y a-t'il avec l'architecture matérielle ?
 
 ## Notion de modèle mémoire
 
@@ -92,19 +92,17 @@ Que signifie l'acronyme CUDA ? Que désigne-t'il ?
 
 # Travaux pratiques
 
-- prise en main des plateformes
- * Amazon Web Service EC2
- * ROMEOLAB
+- prise en main de plateforme GPU Ampere
 
-- mise en oeuvre de CUDA sur 
+- mise en oeuvre de CUDA sur
  * des exemples simples: noyaux BLAS
- * multiplication de matrices pleines ou transposition de matrice 
+ * multiplication de matrices pleines ou transposition de matrice
  * utilisation de bibliothèques embarquant la parallélisation GPU: cuBLAS, cuFFT, ...
  * la résolution de l'équation de la chaleur sur maillage cartésien par une méthode explicite en temps
 
 # Compléments
 
-- autres modèles de programmation / alternatives à plus haut-niveau d'abstraction que CUDA (i.e. le code CUDA est généré par le compilateur ou par une bibliothèque): 
+- autres modèles de programmation / alternatives à plus haut-niveau d'abstraction que CUDA (i.e. le code CUDA est généré par le compilateur ou par une bibliothèque):
  * approche par directive (compilateur) : OpenMP / OpenAcc
  * approche par bibliothèque : Kokkos / Nvidia Thrust : https://fynv.github.io/ThrustRTC/Demo.html
  * approche par language de script : python (Numba/Cupy)

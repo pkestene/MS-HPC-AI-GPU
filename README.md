@@ -72,6 +72,7 @@ Resources pour le cours d'introduction à la programmation des GPUs du [mastère
 - [Hands-On GPU Programming with Python and CUDA](https://www.oreilly.com/library/view/hands-on-gpu-programming/9781788993913/) and [examples](https://github.com/PacktPublishing/Hands-On-GPU-Programming-with-Python-and-CUDA/tree/9e3473f834123860726712dca6259bb4e057a001)
 - [2020-geilo-gpu-python](https://github.com/inducer/2020-geilo-gpu-python)
 - [Numba introduction](https://indico-jsc.fz-juelich.de/event/100/session/2/contribution/31/material/slides/1.pdf)
+- [CuNumeric](https://github.com/nv-legate/cunumeric): drop-in remplacement for Nnumpy, built on top of [legion](https://github.com/StanfordLegion/legion)
 
 ### Machine learning and Deep Learning
 
