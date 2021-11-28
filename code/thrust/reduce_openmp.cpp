@@ -1,5 +1,5 @@
 /*
- * g++ -std=c++11 -O3 -I/usr/local/cuda-7.5/include -o reduce_openmp reduce_openmp.cpp CpuTimerOmp.cpp -fopenmp -lgomp
+ * g++ -std=c++14 -O3 -I/usr/local/cuda/include -o reduce_openmp reduce_openmp.cpp CpuTimerOmp.cpp -fopenmp -lgomp
  */
 
 #include <thrust/host_vector.h>

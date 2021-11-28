@@ -1,9 +1,9 @@
 /*
- * Local machine (training room):
- * nvcc -O3 -gencode arch=compute_20,code=sm_20 -o reduce reduce_answer.cu --ptxas-options -v
+ * Local machine:
+ * nvcc -O3 -gencode arch=compute_75,code=sm_75 -o reduce reduce_answer.cu --ptxas-options -v
  *
- * Poincare:
- * nvcc -O3 -gencode arch=compute_35,code=sm_35 -o reduce reduce_answer.cu --ptxas-options -v
+ * Sophia (ampere80):
+ * nvcc -O3 -gencode arch=compute_80,code=sm_80 -o reduce reduce_answer.cu --ptxas-options -v
  */
 #include <thrust/host_vector.h>
 #include <thrust/device_vector.h>

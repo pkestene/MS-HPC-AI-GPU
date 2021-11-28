@@ -1,5 +1,5 @@
 /* 
- * nvcc -O3 --ptxas-options -v -o bandwidth bandwidth.cu
+ * nvcc -O3 -gencode arch=compute_75,code=sm_75 --ptxas-options -v -o bandwidth bandwidth.cu
  */
 
 #include <stdio.h>

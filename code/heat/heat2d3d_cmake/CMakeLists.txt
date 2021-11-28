@@ -1,5 +1,18 @@
-# require cmake 3.10 for modern cmake cuda support
-cmake_minimum_required(VERSION 3.10 FATAL_ERROR)
+# require cmake 3.18 for modern cmake cuda support
+cmake_minimum_required(VERSION 3.18 FATAL_ERROR)
+
+message("Using CMake version ${CMAKE_VERSION}")
+
+# CMP0104 is about CUDA_ARCHITECTURES
+# see https://cmake.org/cmake/help/latest/policy/CMP0104.html
+if(${CMAKE_VERSION} VERSION_LESS "3.18.0")
+    message("Using cmake policy CMP0104 OLD")
+    cmake_policy(SET CMP0104 OLD)
+else()
+    message("Using cmake policy CMP0104 NEW")
+    cmake_policy(SET CMP0104 NEW)
+endif()
+
 project(heat_solver LANGUAGES CXX C)
 
 set(CMAKE_CXX_STANDARD 11)
@@ -53,7 +66,7 @@ if (USE_CUDA)
   include(protect_pthread_flag)
 
 endif(USE_CUDA)
-  
+
 # other third party libraries
 find_package(MathGL2)
 
@@ -88,7 +101,7 @@ if (DEVICE_SYNC_FORCED)
 endif()
 
 ##################
-# HOST/CPU BUILD 
+# HOST/CPU BUILD
 ##################
 
 add_subdirectory(common)
@@ -114,7 +127,7 @@ if(USE_CUDA)
   # list of 2D executables for GPU
   ################################
   
-  # #heat2d_solver_gpu_naive
+  # # heat2d_solver_gpu_naive
   # add_executable ( heat2d_solver_gpu_naive 
   #   heat2d_solver_gpu_naive.cu
   #   )
@@ -155,9 +168,9 @@ if(USE_CUDA)
   #     mgl
   #     )
   # endif()
-  
+
   # # heat2d_solver_gpu_shmem2
-  # add_executable ( heat2d_solver_gpu_shmem2 
+  # add_executable ( heat2d_solver_gpu_shmem2
   #   heat2d_solver_gpu_shmem2.cu
   #   )
   # target_include_directories( heat2d_solver_gpu_shmem2 PUBLIC cuda_helper)
@@ -173,9 +186,9 @@ if(USE_CUDA)
   ################################
   # list of 3D executables for GPU
   ################################
-  
+
   # # heat3d_solver_gpu_naive
-  # add_executable ( heat3d_solver_gpu_naive 
+  # add_executable ( heat3d_solver_gpu_naive
   #   heat3d_solver_gpu_naive.cu
   #   )
   # target_include_directories( heat3d_solver_gpu_naive PUBLIC cuda_helper)
@@ -187,9 +200,9 @@ if(USE_CUDA)
   #     mgl
   #     )
   # endif()
-  
+
   # # heat3d_solver_gpu_shmem1
-  # add_executable ( heat3d_solver_gpu_shmem1 
+  # add_executable ( heat3d_solver_gpu_shmem1
   #   heat3d_solver_gpu_shmem1.cu
   #   )
   # target_include_directories( heat3d_solver_gpu_shmem1 PUBLIC cuda_helper)
@@ -201,9 +214,9 @@ if(USE_CUDA)
   #     mgl
   #     )
   # endif()
-  
+
   # # heat3d_solver_gpu_shmem2
-  # add_executable ( heat3d_solver_gpu_shmem2 
+  # add_executable ( heat3d_solver_gpu_shmem2
   #   heat3d_solver_gpu_shmem2.cu
   #   )
   # target_include_directories( heat3d_solver_gpu_shmem2 PUBLIC cuda_helper)
@@ -215,11 +228,11 @@ if(USE_CUDA)
   #     mgl
   #     )
   # endif()
-  
+
   ##########################
-  # CPU BUILD with GLUT 
+  # CPU BUILD with GLUT
   ##########################
-  # set ( heat2d_glut_cpu_SRCS 
+  # set ( heat2d_glut_cpu_SRCS
   #   main_glut.cpp
   #   )
   # add_executable (heat2d_glut_cpu ${heat2d_glut_cpu_SRCS})
@@ -229,11 +242,11 @@ if(USE_CUDA)
   #   HeatCommon
   #   pthread glut GL GLEW
   #   )
-  
+
   ##########################
-  # GPU BUILD with GLUT 
+  # GPU BUILD with GLUT
   ##########################
-  # set ( heat2d_glut_gpu_SRCS 
+  # set ( heat2d_glut_gpu_SRCS
   #   main_glut_gpu.cu
   #   )
   # add_executable (heat2d_glut_gpu ${heat2d_glut_gpu_SRCS})
@@ -264,23 +277,35 @@ configure_file(
 message("//===================================================")
 message("  ${PROJECT_NAME} build configuration:")
 message("//===================================================")
-message("  C++ Compiler : ${CMAKE_CXX_COMPILER_ID} "
-  "${CMAKE_CXX_COMPILER_VERSION} " 
-  "${CMAKE_CXX_COMPILER_WRAPPER}")
-message("    ${CMAKE_CXX_COMPILER}")
-message("  USE_CUDA              : ${USE_CUDA}")
+
+message("  CMake version          : ${CMAKE_VERSION}")
+
+if (NOT CMAKE_BUILD_TYPE)
+  message("  CMake build type       : NOT SET !")
+else()
+  message("  CMake build type       : ${CMAKE_BUILD_TYPE}")
+endif()
+
+message("  C++ Compiler Id        : ${CMAKE_CXX_COMPILER_ID}")
+message("  C++ Compiler version   : ${CMAKE_CXX_COMPILER_VERSION}")
+message("  C++ Compiler wrapper   : ${CMAKE_CXX_COMPILER_WRAPPER}")
+message("  C++ Compiler           :  ${CMAKE_CXX_COMPILER}")
+
+message("  USE_CUDA               : ${USE_CUDA}")
 if (USE_CUDA)
-  message("  CUDA compiler ID      : ${CMAKE_CUDA_COMPILER_ID}")
-  message("  CUDA compiler Version : ${CMAKE_CUDA_COMPILER_VERSION}")
-  message("  CUDA Compiler      : ${CMAKE_CUDA_COMPILER}")
-  message("  CUDA Compiler exec : ${CUDA_NVCC_EXECUTABLE}")
-  message("  CUDA Compile flags : ${CMAKE_CUDA_FLAGS}")
-  message("  CUDA toolkit inc   : ${CMAKE_CUDA_TOOLKIT_INCLUDE_DIRECTORIES}")
+  message("  CUDA compiler ID       : ${CMAKE_CUDA_COMPILER_ID}")
+  message("  CUDA compiler Version  : ${CMAKE_CUDA_COMPILER_VERSION}")
+  message("  CUDA Compiler          : ${CMAKE_CUDA_COMPILER}")
+  message("  CUDA Compiler exec     : ${CUDA_NVCC_EXECUTABLE}")
+  message("  CUDA Compile flags     : ${CMAKE_CUDA_FLAGS}")
+  message("  CUDA toolkit inc       : ${CMAKE_CUDA_TOOLKIT_INCLUDE_DIRECTORIES}")
 endif (USE_CUDA)
+
 message("")
+
 if (OpenMP_FOUND)
   message("  OpenMP found")
-  message("  OpenMP CXX flags : ${OpenMP_CXX_FLAGS}")
+  message("  OpenMP CXX flags       : ${OpenMP_CXX_FLAGS}")
 else()
   message("  OpenMP not found")
 endif()
