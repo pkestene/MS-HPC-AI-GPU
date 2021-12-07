@@ -58,21 +58,25 @@ Resources pour le cours d'introduction à la programmation des GPUs du [mastère
 
 - [C++ wrapper library](https://github.com/eyalroz/cuda-api-wrappers)
 - [template CMake project for CUDA](https://github.com/pkestene/cuda-proj-tmpl)
+- [Multi-GPU programming from FZJ](https://github.com/FZJ-JSC/tutorial-multi-gpu)
+- [Multi-GPU programming from Nvidia](https://github.com/NVIDIA/multi-gpu-programming-models)
+- [CUDA Library samples](https://github.com/NVIDIA/CUDALibrarySamples) ([cuFFT](https://docs.nvidia.com/cuda/cufft/index.html), [cuSolver](https://docs.nvidia.com/cuda/cusolver/index.html) , [cuSparse](https://docs.nvidia.com/cuda/cusparse/index.html), ...)
 
 ### CUDA / python
 
+- (NEW 2021) [legate](https://github.com/nv-legate/legate.core) and [cuNumeric](https://github.com/nv-legate/cunumeric)
+- [cuNumeric](https://github.com/nv-legate/cunumeric): drop-in remplacement for Numpy, built on top of [legion](https://github.com/StanfordLegion/legion)
+- [stdpar + cython](https://github.com/shwina/stdpar-cython)
 - [Numba](http://numba.pydata.org/) // [recommended numba tutorial for GPU programming](https://github.com/ContinuumIO/gtc2019-numba)
 - [CuPy](https://cupy.chainer.org/)
 - [pycuda](https://documen.tician.de/pycuda/)
 - [python / C++ CUDA interface (SWIG and Cython)](https://github.com/pkestene/npcuda-example)
 - [python / C++ CUDA interface with pybind11](https://github.com/pkestene/pybind11-cuda)
-- [legate](https://legion.stanford.edu/pdfs/legate-preprint.pdf)
 - [PythonHPC](https://github.com/eth-cscs/PythonHPC)
 - [HPC Python video's](https://www.cscs.ch/publications/tutorials/2018/high-performance-computing-with-python/)
 - [Hands-On GPU Programming with Python and CUDA](https://www.oreilly.com/library/view/hands-on-gpu-programming/9781788993913/) and [examples](https://github.com/PacktPublishing/Hands-On-GPU-Programming-with-Python-and-CUDA/tree/9e3473f834123860726712dca6259bb4e057a001)
 - [2020-geilo-gpu-python](https://github.com/inducer/2020-geilo-gpu-python)
 - [Numba introduction](https://indico-jsc.fz-juelich.de/event/100/session/2/contribution/31/material/slides/1.pdf)
-- [CuNumeric](https://github.com/nv-legate/cunumeric): drop-in remplacement for Nnumpy, built on top of [legion](https://github.com/StanfordLegion/legion)
 
 ### Machine learning and Deep Learning
 
@@ -83,6 +87,7 @@ Resources pour le cours d'introduction à la programmation des GPUs du [mastère
 - [tensorflow tutorial](https://github.com/eth-cscs/SummerSchool2019/tree/master/topics/tensorflow)
 - [AI cheatsheet](doc/ai_cheatsheet.pdf)
 - [m2dsupsdlclass](https://github.com/m2dsupsdlclass/lectures-labs)
+- [deep-learning-with-python-notebooks](https://github.com/fchollet/deep-learning-with-python-notebooks)
 
 ### Graphics / GPU
 
@@ -206,6 +211,16 @@ Alternate programming models for programming modern computing architectures in a
 - https://github.com/LLNL/RAJA et https://github.com/LLNL/RAJA-tutorials
 - https://github.com/triSYCL/triSYCL
 - https://github.com/codeplaysoftware/computecpp-sdk
+
+### Performance portability
+
+- [Performance portability](https://performanceportability.org/)
+
+### Kokkos/C++ library
+
+- https://github.com/kokkos/kokkos
+- https://github.com/kokkos/kokkos-tutorials
+- https://github.com/kokkos/kokkos-tutorials/wiki/Kokkos-Lecture-Series
 
 ### CMake
 
