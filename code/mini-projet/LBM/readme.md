@@ -26,5 +26,6 @@ You have three choices for the mini-project:
 
 - use pure CUDA/C++ to adapt the C++ serial version from directory `cpp`
 - use OpenACC to port the C++ serial version
-- use numba and/or CuPy to adapt the python code `python/lbmFlowAroundCylinder.py` 
-
+- use kokkos or stdpar (for the brave) to port the C++ version to GPU
+- use numba and/or CuPy to adapt the python code `python/lbmFlowAroundCylinder.py`
+- use legate/cunumeric to adapt the python code `python/lbmFlowAroundCylinder.py` (dont be afraid, some feature are not yet implemented in legate/cunumeric, but it is possible to slightly refactor python to make it possible)
