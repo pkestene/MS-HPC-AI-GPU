@@ -61,6 +61,7 @@ Resources pour le cours d'introduction à la programmation des GPUs du [mastère
 - [Multi-GPU programming from FZJ](https://github.com/FZJ-JSC/tutorial-multi-gpu)
 - [Multi-GPU programming from Nvidia](https://github.com/NVIDIA/multi-gpu-programming-models)
 - [CUDA Library samples](https://github.com/NVIDIA/CUDALibrarySamples) ([cuFFT](https://docs.nvidia.com/cuda/cufft/index.html), [cuSolver](https://docs.nvidia.com/cuda/cusolver/index.html) , [cuSparse](https://docs.nvidia.com/cuda/cusparse/index.html), ...)
+- [MatX](https://github.com/NVIDIA/MatX), a GPU-Accelerated Numerical Computing C++ library
 
 ### CUDA / python
 
