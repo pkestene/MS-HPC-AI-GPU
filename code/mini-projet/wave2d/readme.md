@@ -6,9 +6,9 @@ The computationnal kernels are located in [fourier.py](https://github.com/pvthin
 
 # Work
 
-Refactoring this code by using as much as possible [CuPy](https://github.com/cupy/cupy) instead of [numpy](https://numpy.org/), and try to evaluate performance (change simulation domain sizes). By how much the CuPy version is faster than the original CPU only version ?
+Refactoring this code by using as much as possible [CuPy](https://github.com/cupy/cupy) instead of [numpy](https://numpy.org/), and try to evaluate performance (change simulation domain sizes). By how much the CuPy version is faster than the original CPU only version ? Perform a benchmark by varying the domain size, perform a strong scaling study. CuPy.fft is able to handle multi-GPU computation, investigate the use of the two GPUs available on our platform.
 
-Main files are [wave2d.py](https://github.com/pvthinker/wave2d/blob/master/wave2d.py) and [fourier.py](https://github.com/pvthinker/wave2d/blob/master/fourier.py)
+Main files are [wave2d.py](https://github.com/pvthinker/wave2d/blob/master/wave2d.py), [fourier.py](https://github.com/pvthinker/wave2d/blob/master/fourier.py) and [shipwake.py](https://github.com/pvthinker/wave2d/blob/master/shipwake.py)
 
 Additional resources:
 - [CuPy](https://github.com/cupy/cupy)
