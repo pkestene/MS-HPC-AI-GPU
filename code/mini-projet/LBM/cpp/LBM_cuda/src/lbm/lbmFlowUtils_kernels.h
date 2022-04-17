@@ -63,7 +63,7 @@ __global__ void update_fin_inflow_kernel(const LBMParams params,
 
   // TODO
 
-} // border_inflow_kernel
+} // update_fin_inflow_kernel
 
 // ================================================================
 // ================================================================

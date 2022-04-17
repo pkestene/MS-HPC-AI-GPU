@@ -21,7 +21,7 @@ void initCuda(const int selectedDevice)
   cudaGetDeviceCount(&deviceCount);
   if (deviceCount == 0)
   {
-    fprintf(stderr, "Sorry, no CUDA device fount");
+    fprintf(stderr, "Sorry, no CUDA device found");
     exit(1);
   }
   if (selectedDevice >= deviceCount)
