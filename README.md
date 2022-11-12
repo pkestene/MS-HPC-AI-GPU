@@ -97,6 +97,7 @@ Resources pour le cours d'introduction à la programmation des GPUs du [mastère
 and Partial Differential Equations](https://www.cs.uoi.gr/~lagaris/papers/TNN-LLF.pdf), Lagaris etal, IEEE TRANSACTIONS ON NEURAL NETWORKS, VOL. 9, NO. 5, SEPTEMBER 1998
 - Physics Informed Deep Learning (Part I): Data-driven, Solutions of Nonlinear Partial Differential Equations, https://arxiv.org/pdf/1711.10561.pdf
 - Raissi et al, Physics-informed neural networks: A deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations, https://doi.org/10.1016/j.jcp.2018.10.045
+- https://github.com/openhackathons-org/gpubootcamp/tree/master/hpc_ai/PINN
 - [Nvidia Modulus documentation](https://docs.nvidia.com/deeplearning/modulus/index.html)
 - [Nvidia Modulus source code](https://gitlab.com/nvidia/modulus/modulus)
 - [Nvidia Modulus examples](https://gitlab.com/nvidia/modulus/examples)
