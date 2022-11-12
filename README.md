@@ -102,6 +102,7 @@ and Partial Differential Equations](https://www.cs.uoi.gr/~lagaris/papers/TNN-LL
 - [Nvidia Modulus source code](https://gitlab.com/nvidia/modulus/modulus)
 - [Nvidia Modulus examples](https://gitlab.com/nvidia/modulus/examples)
 - [DeepXDE](https://github.com/lululxvi/deepxde)
+- [TensorDiffEq](https://github.com/tensordiffeq/TensorDiffEq)
 - [SciANN](https://github.com/sciann/sciann), [SciANN examples](https://github.com/sciann/sciann-applications)
 - https://github.com/maziarraissi/PINNs
 - a review article : [Scientific Machine Learning Through Physics–Informed Neural Networks: Where we are and What’s Next](https://link.springer.com/article/10.1007/s10915-022-01939-z)
