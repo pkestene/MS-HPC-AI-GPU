@@ -104,7 +104,10 @@ and Partial Differential Equations](https://www.cs.uoi.gr/~lagaris/papers/TNN-LL
 - [DeepXDE](https://github.com/lululxvi/deepxde)
 - [TensorDiffEq](https://github.com/tensordiffeq/TensorDiffEq)
 - [SciANN](https://github.com/sciann/sciann), [SciANN examples](https://github.com/sciann/sciann-applications)
+- [neurodiffeq](https://github.com/NeuroDiffGym/neurodiffeq)
+- Julia's [DiffEqFlux.jl](https://github.com/SciML/DiffEqFlux.jl), [NeuralOperators.jl](https://github.com/SciML/NeuralOperators.jl) and [OperatorLearning](https://github.com/SciML/OperatorLearning.jl)
 - https://github.com/maziarraissi/PINNs
+- [Fourier Neural Operator](https://github.com/zongyi-li/fourier_neural_operator)
 - a review article : [Scientific Machine Learning Through Physics–Informed Neural Networks: Where we are and What’s Next](https://link.springer.com/article/10.1007/s10915-022-01939-z)
 
 ### Graphics / GPU
