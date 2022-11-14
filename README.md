@@ -90,6 +90,7 @@ Resources pour le cours d'introduction à la programmation des GPUs du [mastère
 - [m2dsupsdlclass](https://github.com/m2dsupsdlclass/lectures-labs)
 - [deep-learning-with-python-notebooks](https://github.com/fchollet/deep-learning-with-python-notebooks)
 - https://d2l.ai/
+- [Building a neural network FROM SCRATCH (no Tensorflow/Pytorch, just numpy & math)](https://www.youtube.com/watch?v=w8yWXqWQYmU&t=1s)
 
 ### Physics Informed Neural Networks (PINN)
 
