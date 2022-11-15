@@ -110,6 +110,7 @@ and Partial Differential Equations](https://www.cs.uoi.gr/~lagaris/papers/TNN-LL
 - https://github.com/maziarraissi/PINNs
 - [Fourier Neural Operator](https://github.com/zongyi-li/fourier_neural_operator)
 - a review article : [Scientific Machine Learning Through Physics–Informed Neural Networks: Where we are and What’s Next](https://link.springer.com/article/10.1007/s10915-022-01939-z)
+- [slides by Lu Lu (Univ. Penn)](https://github.com/lululxvi/tutorials/blob/master/20211210_pinn/pinn.pdf)
 
 ### Graphics / GPU
 
