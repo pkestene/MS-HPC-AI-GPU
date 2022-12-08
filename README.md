@@ -177,6 +177,11 @@ Which compiler ?
 - clang >= 10.0.1 for multicore CPUs
 - [Intel OneApi HPC Toolkit](https://software.intel.com/content/www/us/en/develop/tools/oneapi/hpc-toolkit.html)
 
+### stdpar for Fortran
+
+- https://developer.nvidia.com/blog/accelerating-fortran-do-concurrent-with-gpus-and-the-nvidia-hpc-sdk/
+- example code [euler2d_cudaFortran](https://github.com/pkestene/euler2d_cudaFortran) : solving Euler's equations in Fortran with stdpar (do concurrent loops)
+
 ### SYCL
 
 - [Khronos](https://www.khronos.org/sycl/resources)
