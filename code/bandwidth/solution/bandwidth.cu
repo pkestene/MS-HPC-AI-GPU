@@ -160,7 +160,7 @@ int main( int argc, char* argv[] )
 
   // print bandwidth:
   {
-    int numBytes = 2*N*sizeof(int); // factor 2 because 1 read + 1 write
+    size_t numBytes = 2*N*sizeof(int); // factor 2 because 1 read + 1 write
     printf("bandwidth is %f GBytes (%f)/s\n",
 	   1e-9*numBytes/copyTimer.elapsed_in_second(),
 	   copyTimer.elapsed_in_second() );
