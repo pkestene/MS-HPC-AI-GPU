@@ -2,3 +2,4 @@ helloworld_array
 helloworld_array2
 *.sqlite
 *.qdrep
+*.nsys-rep

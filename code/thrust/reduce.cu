@@ -1,5 +1,5 @@
 /*
- * nvcc -O3 -gencode arch=compute_30,code=sm_30 -o reduce reduce.cu --ptxas-options -v
+ * nvcc -O3 -gencode arch=compute_80,code=sm_80 -o reduce reduce.cu --ptxas-options -v
  */
 #include <thrust/host_vector.h>
 #include <thrust/device_vector.h>

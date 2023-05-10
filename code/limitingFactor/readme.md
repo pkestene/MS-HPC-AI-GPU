@@ -11,24 +11,25 @@ The code is given in two equivalent version
 
 ## Build
 
-Adapt the following to your CUDA hardware architecture 
+Adapt the following to your CUDA hardware architecture
 
 ### Config 1
 
 ```shell
-nvcc -lineinfo -arch=sm_50 --ptxas-options -v limitingFactor.cu -o limitingFactor
+nvcc -lineinfo -arch=sm_80 --ptxas-options -v limitingFactor.cu -o limitingFactor_v1
 ```
 
 ### Config 2
 
 ```shell
-nvcc -lineinfo -arch=sm_50 --ptxas-options -v limitingFactor.cu --use_fast_math -o limitingFactor
+nvcc -lineinfo -arch=sm_80 --ptxas-options -v limitingFactor.cu --use_fast_math -o limitingFactor_v2
 ```
 
 ## Profile using command line
 
 ```shell
-nsys profile ./limitingFactor
+nsys profile --trace=cuda,nvtx -o ./limitingFactor_v1 --force-overwrite=true ./limitingFactor_v1
+nsys profile --trace=cuda,nvtx -o ./limitingFactor_v2 --force-overwrite=true ./limitingFactor_v2
 ```
 
 This will generate in your a file (e.g. _/home/pkestene/nvidia_nsight_systems/report17.qdrep_) with qdrep extension, containing profiling data.
@@ -36,7 +37,8 @@ This will generate in your a file (e.g. _/home/pkestene/nvidia_nsight_systems/re
 ## Visualize the profiling data
 
 ```shell
-nsight-sys /home/pkestene/nvidia_nsight_systems/report17.qdrep
+nsys-ui ./limitingFactor_v1.nsys-rep
+nsys-ui ./limitingFactor_v2.nsys-rep
 ```
 
 Repeat the previous step with config 2, and visualize again the profiling data.

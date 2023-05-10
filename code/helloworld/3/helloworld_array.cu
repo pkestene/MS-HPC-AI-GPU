@@ -25,7 +25,7 @@
  * \param[in]  b input array
  * \param[out] c output array
  */
-__global__ void add( int *a, int *b, int *c, int n ) 
+__global__ void add( int *a, int *b, int *c, int n )
 {
 
   int i = threadIdx.x + blockIdx.y * blockDim.x;
@@ -38,7 +38,7 @@ __global__ void add( int *a, int *b, int *c, int n )
 /*
  * main
  */
-int main( int argc, char* argv[] ) 
+int main( int argc, char* argv[] )
 {
   // array size
   int N = 1000000;
@@ -48,7 +48,7 @@ int main( int argc, char* argv[] )
 
   // device variables
   int *dev_a, *dev_b, *dev_c;
-  
+
   // CPU memory allocation / initialization
   a = (int *) malloc(N*sizeof(int));
   b = (int *) malloc(N*sizeof(int));
@@ -66,8 +66,8 @@ int main( int argc, char* argv[] )
                               cudaMemcpyHostToDevice ) );
   CUDA_API_CHECK( cudaMemcpy( dev_b, b, N*sizeof(int),
                               cudaMemcpyHostToDevice ) );
-  
-  
+
+
   // perform computation on GPU
   int nbThreadsPerBlock = 1280;
   dim3 blockSize(nbThreadsPerBlock,1,1);

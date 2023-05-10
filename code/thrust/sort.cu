@@ -1,5 +1,5 @@
 /*
- * nvcc -O3 -gencode arch=compute_30,code=sm_30 -o sort sort.cu --ptxas-options -v
+ * nvcc -O3 -gencode arch=compute_80,code=sm_80 -o sort sort.cu --ptxas-options -v
  */
 #include <thrust/host_vector.h>
 #include <thrust/device_vector.h>
@@ -29,7 +29,7 @@ int main(void)
 
   // transfer data back to host
   thrust::copy(d_vec.begin(), d_vec.end(), h_vec.begin());
-  
+
   printf("Thrust sorted %d keys in %g ms\n", N, timer.Elapsed());
   return 0;
 }

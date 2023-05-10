@@ -1,5 +1,5 @@
-/* 
- * nvcc -O3 -gencode arch=compute_75,code=sm_75 --ptxas-options -v -o bandwidth bandwidth.cu
+/*
+ * nvcc -O3 --ptxas-options -v -o bandwidth bandwidth.cu
  */
 
 #include <stdio.h>
@@ -19,12 +19,12 @@ static void HandleError( const char* kernelName,
                          const char *file,
                          int line ) {
   cudaError_t err = cudaPeekAtLastError();
-  
+
   if (err != cudaSuccess) {
-    printf("Kernel %s FAILED in %s at line %d with error message:\n%s\n", 
+    printf("Kernel %s FAILED in %s at line %d with error message:\n%s\n",
 	   kernelName,
-	   file, 
-	   line, 
+	   file,
+	   line,
 	   cudaGetErrorString(cudaGetLastError()));
     exit( EXIT_FAILURE );
   }
@@ -58,7 +58,7 @@ __global__ void copy2( int *a, int *b, int n ) {
 
   while (i<n) {
     b[i] = a[i];
-  
+
     i += gridDim.x*blockDim.x;
   }
 
@@ -67,7 +67,7 @@ __global__ void copy2( int *a, int *b, int n ) {
 /*
  * main
  */
-int main( int argc, char* argv[] ) 
+int main( int argc, char* argv[] )
 {
   // array size
   int N = 1000000;
@@ -77,7 +77,7 @@ int main( int argc, char* argv[] )
 
   // device variables
   int *dev_a, *dev_b;
-  
+
   // read N from command ligne
   if (argc>1) {
     N= atoi(argv[1]);
@@ -160,7 +160,7 @@ int main( int argc, char* argv[] )
 
   // print bandwidth:
   {
-    size_t numBytes = 2*N*sizeof(int); // factor 2 because 1 read + 1 write
+    int numBytes = 2*N*sizeof(int); // factor 2 because 1 read + 1 write
     printf("bandwidth is %f GBytes (%f)/s\n",
 	   1e-9*numBytes/copyTimer.elapsed_in_second(),
 	   copyTimer.elapsed_in_second() );
@@ -172,7 +172,7 @@ int main( int argc, char* argv[] )
     cudaGetDeviceProperties(&deviceProp, 0);
 
     printf("  Peak Memory Bandwidth (GB/s): %f\n",
-	   2.0*deviceProp.memoryClockRate*(deviceProp.memoryBusWidth/8)/1.0e6);    
+	   2.0*deviceProp.memoryClockRate*(deviceProp.memoryBusWidth/8)/1.0e6);
   }
 
   // de-allocate CPU host memory

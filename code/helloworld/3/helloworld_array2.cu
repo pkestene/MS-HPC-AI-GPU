@@ -26,7 +26,7 @@
  * \param[in]  a input array
  * \param[out] b output array
  */
-__global__ void compute_gpu( int *a, int *b, int n ) 
+__global__ void compute_gpu( int *a, int *b, int n )
 {
 
   int i = threadIdx.x + blockIdx.y * blockDim.x;
@@ -50,7 +50,7 @@ void compute_cpu( int *a, int *b, int n)
 /*
  * main
  */
-int main( int argc, char* argv[] ) 
+int main( int argc, char* argv[] )
 {
   // array size
   int N = 1000000;
@@ -60,7 +60,7 @@ int main( int argc, char* argv[] )
 
   // device variables
   int *dev_a, *dev_b;
-  
+
   // CPU memory allocation / initialization
   a = (int *) malloc(N*sizeof(int));
   b = (int *) malloc(N*sizeof(int));
@@ -74,28 +74,32 @@ int main( int argc, char* argv[] )
   CUDA_API_CHECK( cudaMalloc( (void**)&dev_b, N*sizeof(int) ) );
   CUDA_API_CHECK( cudaMemcpy( dev_a, a, N*sizeof(int),
                               cudaMemcpyHostToDevice ) );
-  
-  
+
+
   // perform computation on GPU
+  nvtxRangePush("compute_gpu");
   int nbThreadsPerBlock = 128;
   dim3 blockSize(nbThreadsPerBlock,1,1);
   dim3 gridSize(N/nbThreadsPerBlock+1,1,1);
   compute_gpu<<<gridSize,blockSize>>>( dev_a, dev_b, N );
   CUDA_KERNEL_CHECK("compute_gpu");
+  nvtxRangePop();
 
   // perform computation on CPU
   compute_cpu(a,b,N);
 
   // and again on GPU
+  nvtxRangePush("compute_gpu");
   compute_gpu<<<gridSize,blockSize>>>( dev_a, dev_b, N );
   CUDA_KERNEL_CHECK("compute_gpu");
+  nvtxRangePop();
 
   // and again on CPU
   compute_cpu(a,b,N);
 
   CUDA_API_CHECK( cudaMemcpy( b, dev_b, N*sizeof(int),
                               cudaMemcpyDeviceToHost ) );
-  
+
 
   // de-allocate CPU host memory
   free(b);

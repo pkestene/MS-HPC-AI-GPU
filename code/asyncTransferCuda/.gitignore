@@ -1,0 +1,5 @@
+async_cu
+async_cuf
+*.o
+*.nsys-rep
+*.mod

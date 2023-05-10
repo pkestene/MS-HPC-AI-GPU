@@ -8,12 +8,12 @@ CUDA_ARCH ?= sm_80
 
 
 CC=nvcc
-CFLAGS= -O3 -I$(CUDA_INC_PATH) --ptxas-options=-v -arch=${CUDA_ARCH} -Xcompiler -fopenmp
+CFLAGS= -O3 -I$(CUDA_INC_PATH) --ptxas-options=-v -arch=${CUDA_ARCH} -lineinfo -Xcompiler -fopenmp
 LDFLAGS=-L$(CUDA_LIB_PATH) -lcudart -lcublas -lgomp
 
 all: saxpy
 
-saxpy:
+saxpy: saxpy.cu
 	$(CC) $(CFLAGS) $(LDFLAGS) my_cuda_utils.cu SimpleTimer.cpp  OpenMPTimer.cpp saxpy.cu -o saxpy
 
 clean:

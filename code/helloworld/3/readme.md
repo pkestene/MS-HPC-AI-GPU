@@ -12,7 +12,7 @@ Here we revisit again a helloworld (adding two vector of integers), and visualiz
   ```shell
   nvcc -g -G -arch=sm_XX -o helloworld_array2 helloworld_array2.cu -lnvToolsExt
   ```
-- launch nvvp (Nvidia visual profiling)
+- launch `nsys-ui` (Nvidia visual profiling)
 
 Manipulations:
 - Can you interpret the visual trace (look at cpu / gpu trace) ?
@@ -22,17 +22,11 @@ Manipulations:
 
 ## How to acquire profiling information
 
-### Use command line
-
-- acquire data
+- acquire profiling data
   ```shell
-  nsys profile -s cpu --stats=true --output report ./helloworld2
+  nsys profile --trace=cuda,nvtx --stats=true --output helloworld_array2 ./helloworld_array2
   ```
 - visualize profiling data
   ```shell
-  nsight-sys $PWD/report.qdrep
+  nsys-ui ./helloworld_array2.nsys-rep
   ```
-
-### Use the visual profiler nvvp
-
-Launch nvvp and start a new session.
