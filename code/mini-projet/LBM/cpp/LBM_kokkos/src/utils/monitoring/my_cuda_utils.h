@@ -1,0 +1,25 @@
+#ifndef __TOOLS__H__
+#define __TOOLS__H__
+
+/////////////////////////////////////
+// initialises CUDA and directs all
+// computations to the given
+// CUDA device
+/////////////////////////////////////
+void initCuda(const int selectedDevice);
+
+/////////////////////////////////////
+// error checking 
+/////////////////////////////////////
+void checkErrors(const char *label);
+
+
+/////////////////////////////////////
+// CPU based timings 
+/////////////////////////////////////
+void startTimer(void);
+double stopTimer(void);
+
+
+#endif
+
